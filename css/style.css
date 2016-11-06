@@ -53,7 +53,10 @@ ul.icons {
 .second_sl .container {
   align-items: center;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex-wrap: wrap; }
+  .second_sl .container h2 {
+    min-width: 100%; }
   @media only screen and (min-width: 768px) {
     .second_sl .container {
       flex-direction: row; } }
@@ -106,6 +109,13 @@ ul.icons {
     padding: 1rem 2rem; }
     .half p .fa {
       color: #D71955; }
+
+p.quote {
+  color: #D71955;
+  float: right;
+  font-style: italic;
+  padding: 0 2rem 2rem 40%;
+  text-align: right; }
 
 .tiles {
   display: flex;

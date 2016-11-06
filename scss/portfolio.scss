@@ -65,6 +65,9 @@ ul.icons{
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
+
+	h2 { min-width: 100% }
 
 	@include MQ(M) { flex-direction: row; }
 }
@@ -125,6 +128,15 @@ ul.icons{
 			color:$c-pink;
 		}
 	}
+}
+
+p.quote {
+
+	color: $c-pink;
+	float: right;
+	font-style: italic;
+	padding: 0 2rem 2rem 40%;
+	text-align: right;
 }
 
 .tiles{
