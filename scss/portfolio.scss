@@ -64,6 +64,9 @@ ul.icons{
 
 	align-items: center;
 	display: flex;
+	flex-direction: column;
+
+	@include MQ(M) { flex-direction: row; }
 }
 
 .second_sl,

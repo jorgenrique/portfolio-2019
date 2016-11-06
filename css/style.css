@@ -52,7 +52,11 @@ ul.icons {
 
 .second_sl .container {
   align-items: center;
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (min-width: 768px) {
+    .second_sl .container {
+      flex-direction: row; } }
 
 .second_sl h2,
 .fifth_sl h2 {
