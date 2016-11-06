@@ -114,8 +114,8 @@ p.quote {
   color: #D71955;
   float: right;
   font-style: italic;
-  padding: 0 2rem 2rem 40%;
-  text-align: right; }
+  padding: 0 40% 2rem 2rem;
+  text-align: left; }
 
 .tiles {
   display: flex;
