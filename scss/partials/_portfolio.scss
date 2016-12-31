@@ -1,0 +1,163 @@
+.intro{
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+	width:100vw;
+	height:100vh;
+
+	svg{
+
+		margin-bottom:2rem;
+		width:90vw;
+
+		@include MQ(M) { width:75vw; }
+		@include MQ(L) { width:60vw; }
+	}
+}
+
+.about-me {
+
+    .text {
+
+        @include MQ(M) { display: flex; }
+
+        p {
+
+            flex: 1;
+            padding: 0 1rem;
+        }
+    }
+
+    .image {
+
+        margin-bottom: 4rem;
+        text-align: center;
+        width: 100%;
+
+        img {
+
+            margin: auto;
+            max-width: 300px;
+            width: 60%;
+        }
+    }
+
+    .logos {
+
+        @include MQ(M) { display: flex; }
+
+        >div {
+
+            flex: 1;
+            @include MQ(M) { padding: 0 2rem; }
+        }
+
+        h3 { text-align: center; }
+    }
+}
+
+.tiles{
+
+	display:flex;
+    flex-wrap: wrap;
+	justify-content:space-around;
+    margin-bottom: 2rem;
+
+	li{
+
+		padding:0.5rem 1rem;
+		box-sizing:border-box;
+		width:50%;
+
+		// @include MQ(M) { width:25%; }
+
+		img{ width:100%; }
+	}
+
+    &.brands li { width:33%; }
+}
+
+.timeline {
+
+    h6 { @include MQ(SM) { display: none } }
+
+    .years {
+
+        width: 100vw;
+        position: relative;
+        text-align: center;
+
+        &:after,
+        &:before {
+
+            content: '';
+            height: 100%;
+            width: 40px;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+        }
+
+        &:after {
+
+            right: 0;
+            background-image: linear-gradient( to right, rgba($c-white,0), rgba($c-white,1));
+        }
+
+        &:before {
+
+            left: 0;
+            background-image: linear-gradient( to left, rgba($c-white,0), rgba($c-white,1));
+        }
+
+        .years-cont { overflow: auto; }
+
+        ul {
+
+            display: inline-block;
+            margin: 0 20px;
+            width: 508px;
+            position: relative;
+            z-index: 1;
+        }
+
+        li {
+
+            border-radius: 50%;
+            color: $c-pink;
+            cursor: pointer;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 20px;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+            width: 40px;
+
+            &.active {
+
+                background-color: $c-pink;
+                color: $c-white;
+            }
+        }
+    }
+}
+
+.details {
+
+    width: 100%;
+
+    @include MQ(M) {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+
+        flex: 1;
+        margin-bottom: 4rem;
+    }
+}
