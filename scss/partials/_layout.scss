@@ -44,10 +44,10 @@ section {
     justify-content: center;
     margin: 0 auto 2rem;
     max-width:1240px;
-    padding: 0 1rem;
+    padding: 1rem;
 	width:100%;
 
-    @include MQ(M) { padding: 0 2rem; }
+    @include MQ(M) { padding: 2rem; }
 }
 
 .columns {
@@ -65,7 +65,7 @@ section {
     }
 }
 
-.container { margin-bottom: 2rem }
+.container { margin-bottom: 7rem }
 
 ul {
 
@@ -103,6 +103,12 @@ Footer
     width: 100%;
     z-index: 5;
 
+    @include MQ(L) {
+
+        bottom: 0;
+        position: relative;
+    }
+
     &.open {
 
         bottom: 0;
@@ -139,6 +145,8 @@ Footer
         z-index:10;
         transition: all 0.1s;
         box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+
+        @include MQ(L) { display: none; }
     }
 
     .grow { transform: scale(0.75) }
@@ -152,6 +160,8 @@ Footer
         justify-content: center;
         padding: 20px;
         width: 100%;
+
+        @include MQ(L) { display: none; }
     }
 
     .nav-items {

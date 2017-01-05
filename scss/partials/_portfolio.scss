@@ -7,14 +7,52 @@
 	width:100vw;
 	height:100vh;
 
-	svg{
+    .logo {
 
-		margin-bottom:2rem;
-		width:90vw;
+        svg{
 
-		@include MQ(M) { width:75vw; }
-		@include MQ(L) { width:60vw; }
-	}
+            margin-bottom:2rem;
+            max-width: 800px;
+            width:90vw;
+
+            @include MQ(M) { width:75vw; }
+            @include MQ(L) { width:60vw; }
+        }
+    }
+
+    .arrow-more {
+
+        border: 1px solid $c-pink;
+        display: none;
+        cursor: pointer;
+        height: 50px;
+        margin-top: 5rem;
+        text-align: center;
+        transform: rotate(45deg);
+        transition: all 0.2s ease-in-out;
+        width: 50px;
+
+        @include MQ(L) { display: block; }
+
+        svg {
+
+            height: 60%;
+            margin-top: 20%;
+            transform: rotate(-45deg);
+
+            g,
+            path {
+
+                fill: $c-pink;
+                stroke: transparent;
+            }
+        }
+
+        &:hover {
+
+            transform: rotate(45deg) scale(0.9);
+        }
+    }
 }
 
 .about-me {
@@ -26,13 +64,14 @@
         p {
 
             flex: 1;
+            margin: 0;
             padding: 0 1rem;
         }
     }
 
     .image {
 
-        margin-bottom: 4rem;
+        margin-bottom: 7rem;
         text-align: center;
         width: 100%;
 
@@ -52,6 +91,17 @@
 
             flex: 1;
             @include MQ(M) { padding: 0 2rem; }
+
+            &:first-of-type {
+
+                margin-bottom: 7rem;
+
+                @include MQ(M) {
+
+                    border-right: 1px solid $c-pink;
+                    margin-bottom: 0;
+                }
+            }
         }
 
         h3 { text-align: center; }
@@ -126,7 +176,7 @@
         li {
 
             border-radius: 50%;
-            color: $c-pink;
+            color: $c-lightgrey;
             cursor: pointer;
             display: inline-block;
             height: 40px;
@@ -143,16 +193,73 @@
             }
         }
     }
+
+    .main-info {
+
+        margin: auto;
+        max-width: 600px;
+        overflow-x: auto;
+        width: 100%;
+
+        .main-info-cont {
+
+            height: 280px;
+            margin: 2rem 0;
+            position: relative;
+            width: 100%;
+        }
+
+
+        ul {
+
+            opacity: 0;
+            position: absolute;
+            transition: all 0.3s ease-in-out;
+            z-index: 0;
+
+            @include center();
+
+            &.show {
+
+                opacity: 1;
+                z-index: 1;
+            }
+
+            .bg-year {
+
+                @include center();
+
+                color: $c-pink;
+                font-size: 200px;
+                opacity: 0.1;
+                position: absolute;
+                z-index: 0;
+            }
+
+            li {
+
+                margin: 1rem auto;
+                max-width: 300px;
+                position: relative;
+                z-index: 1;
+                width: 100%;
+            }
+        }
+    }
 }
 
 .details {
 
     width: 100%;
 
-    @include MQ(M) {
+    @include MQ(M) { display: flex; }
 
-        display: flex;
-        justify-content: space-between;
+    .column {
+
+        flex: 1;
+        margin-bottom: 7rem;
+
+        @include MQ(M) { margin-bottom: 0 }
     }
 
     ul {
