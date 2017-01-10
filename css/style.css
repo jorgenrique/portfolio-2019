@@ -37,6 +37,7 @@ section {
   justify-content: center;
   margin: 0 auto 2rem;
   max-width: 1240px;
+  min-height: 100vh;
   padding: 1rem;
   width: 100%; }
   @media only screen and (min-width: 768px) {
@@ -433,5 +434,75 @@ p.quote {
   .details ul {
     flex: 1;
     margin-bottom: 4rem; }
+
+.how-i-work .slides {
+  padding: 0 3rem;
+  position: relative;
+  width: 100%; }
+  .how-i-work .slides .arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease-in-out;
+    width: 30px; }
+    .how-i-work .slides .arrow svg g path {
+      fill: #D71955; }
+    .how-i-work .slides .arrow.show {
+      cursor: pointer;
+      display: inline-block; }
+    .how-i-work .slides .arrow.arrow-left {
+      right: calc(100% - 30px);
+      transform: rotate(90deg) translateX(-50%); }
+    .how-i-work .slides .arrow.arrow-right {
+      left: calc(100% - 30px);
+      transform: rotate(-90deg) translateX(50%); }
+  .how-i-work .slides .slides-container {
+    overflow: hidden;
+    width: 100%; }
+  .how-i-work .slides .slide-gallery {
+    align-items: center;
+    display: flex;
+    transition: all 0.3s ease-in-out; }
+  .how-i-work .slides .slide {
+    display: inline-block;
+    width: 100%; }
+    .how-i-work .slides .slide .slide-info {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%; }
+      @media only screen and (min-width: 768px) {
+        .how-i-work .slides .slide .slide-info {
+          flex-direction: row; } }
+    .how-i-work .slides .slide .image {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: center; }
+      .how-i-work .slides .slide .image svg {
+        max-width: 200px;
+        opacity: 0.5;
+        width: 100%; }
+        .how-i-work .slides .slide .image svg .slide-svg,
+        .how-i-work .slides .slide .image svg path {
+          fill: #999; }
+    .how-i-work .slides .slide .info {
+      align-items: center;
+      display: flex;
+      flex: 2;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 2rem; }
+      @media only screen and (min-width: 768px) {
+        .how-i-work .slides .slide .info {
+          align-items: flex-start;
+          flex: 1; } }
+      .how-i-work .slides .slide .info h3 {
+        border-left: 1px solid #D71955;
+        padding-left: 1rem; }
+      .how-i-work .slides .slide .info p {
+        text-align: center; }
+        @media only screen and (min-width: 768px) {
+          .how-i-work .slides .slide .info p {
+            text-align: left; } }
 
 /*# sourceMappingURL=style.css.map */

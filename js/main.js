@@ -3,8 +3,54 @@ $(document).ready( function () {
     var body = $("html, body"),
         aboutOffset = $('.about-me').offset().top,
         workOffset = $('.how-i-work').offset().top,
-        caseOffset = $('.case-studies').offset().top
+        caseOffset = $('.case-studies').offset().top,
+        slideWidth = $('.how-i-work .slides-container').width(),
+        slideElements = $('.how-i-work .slide'),
+        slideGallery = $('.how-i-work .slide-gallery'),
+        slideNumber = 1
 
+    slideElements.css( 'width', slideWidth )
+    slideGallery.css('width', ( ( slideWidth + 8 ) * slideElements.size() ) )
+
+    $('.arrow-right').on('click', function() {
+
+        if (slideNumber == 1) { $('.arrow-left').addClass('show') }
+
+        slideNumber ++
+
+        if ( slideNumber < slideElements.size() ) {
+
+            slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
+
+        } else if ( slideNumber = slideElements.size() ) {
+
+            $(this).removeClass('show')
+            slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
+        }
+
+        console.log(slideNumber)
+
+    })
+
+
+    $('.arrow-left').on('click', function() {
+
+        if (slideNumber == slideElements.size() ) { $('.arrow-right').addClass('show') }
+
+        slideNumber --
+
+        if ( slideNumber > 1 ) {
+
+            slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
+
+        } else if ( slideNumber = 1  ) {
+
+            $(this).removeClass('show')
+            slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
+        }
+
+        console.log(slideNumber)
+    })
 
     $('.arrow-more').on('click', function() {
 
