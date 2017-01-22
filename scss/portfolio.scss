@@ -1,25 +1,21 @@
-@include MQ(L) {
+footer {
 
-	.cd-section{
+	display: flex;
+	justify-content: center;
+	padding: 40px 0 20px;
+	width: 100%;
 
-		z-index:1;
-		opacity:0;
-		transition: opacity 0.5s ease-in-out;
-		height: 100vh;
-	}
-
-	.visible{
-
-		z-index:2;
-		opacity:1;
-	}
+	svg { height: 30px; }
 }
+
+.cd-section.first_sl { padding: 0 }
 
 .slide_1{
 
+	height:100vh;
+	padding: 0;
 	position:relative;
 	width:100vw;
-	height:100vh;
 
 	.logo{
 
@@ -29,6 +25,7 @@
 		svg{
 
 			margin-bottom:2rem;
+			max-width: 600px;
 			width:90vw;
 
 			@include MQ(M) { width:75vw; }
@@ -51,15 +48,6 @@ ul.icons{
 	}
 }
 
-.second_sl,
-.third_sl,
-.fourth_sl,
-.fifth_sl {
-
-	margin-bottom:5rem;
-	overflow:hidden;
-}
-
 .second_sl .container {
 
 	align-items: center;
@@ -73,18 +61,15 @@ ul.icons{
 }
 
 .second_sl,
+.third_sl,
 .fifth_sl {
 
 	h2{ margin-bottom:3rem; }
 }
 
 .third_sl{
-	h2{
-		margin-bottom:3rem;
-	}
-	.tiles{
-		margin-bottom:3rem;
-	}
+
+	.tiles{ margin-bottom:3rem; }
 }
 
 .fourth_sl{
@@ -102,16 +87,12 @@ ul.icons{
 	}
 }
 .container{
+
 	max-width:1140px;
+	margin: auto;
 	width:100%;
-	float:left;
-	@include MQ(L) {
-		float:none;
-		left:50% !important;
-		top:50% !important;
-		transform:translate(-50%,-50%) !important;
-	}
 }
+
 .half{
 	width:100%;
 	float:left;
@@ -123,7 +104,7 @@ ul.icons{
 		text-align:left;
 		font-size:1rem;
 		line-height:1.5;
-		padding:1rem 2rem;
+		padding:0.5rem 2rem;
 		.fa{
 			color:$c-pink;
 		}
@@ -134,7 +115,7 @@ p.quote {
 
 	float: right;
 	font-style: italic;
-	padding: 0 40% 2rem 2rem;
+	padding: 2rem 40% 0 2rem;
 	text-align: left;
 }
 
