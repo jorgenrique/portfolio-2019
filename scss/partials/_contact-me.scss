@@ -1,0 +1,16 @@
+.contact-me {
+
+    @include MQ(L) { padding-top: 8rem; }
+
+    a { margin-top: 1rem; }
+
+    .nav-items {
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+
+        li { margin: 0 1rem; }
+    }
+}

@@ -1,22 +1,12 @@
 @import 'bourbon/bourbon'; // http://bourbon.io/
-
-@import '../partials/variables'; // colors, fonts etc...
-
-@import '../partials/mixins'; // custom mixins
-
-@import '../partials/layout'; // responsive grid and media queries
-
-@import '../partials/desktop-nav'; // navigation for desktop
-
-@import '../partials/mobile-nav'; // navigation for mobile
-
-@import 'portfolio'; // portfolio specific styling
-
-/* --------------------------------
-
-Primary style
-
--------------------------------- */
+@import 'partials/variables'; // colors, fonts etc...
+@import 'partials/mixins'; // custom mixins
+@import 'partials/layout'; // responsive grid and media queries
+@import 'partials/typography'; // typography specific styling
+@import 'partials/intro'; // intro specific styling
+@import 'partials/about-me'; // section specific styling
+@import 'partials/work-process'; // section specific styling
+@import 'partials/contact-me'; // section specific styling
 
 *,
 *::after,
@@ -49,11 +39,6 @@ body {
 			content: 'desktop';
 		}
 	}
-}
-
-a {
-	color: $c-lightgrey;
-	text-decoration: none;
 }
 
 /* --------------------------------
