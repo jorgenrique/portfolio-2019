@@ -3,7 +3,8 @@ $(document).ready( function () {
     var body = $("html, body"),
         aboutOffset = $('.about-me').offset().top,
         workOffset = $('.how-i-work').offset().top,
-        caseOffset = $('.case-studies').offset().top,
+        // caseOffset = $('.case-studies').offset().top,
+        contactMe = $('.contact-me').offset().top,
         slideWidth = $('.how-i-work .slides-container').width(),
         slideElements = $('.how-i-work .slide'),
         slideGallery = $('.how-i-work .slide-gallery'),
@@ -54,6 +55,8 @@ $(document).ready( function () {
 
     $('.arrow-more').on('click', function() {
 
+        console.log(aboutOffset);
+
         body.animate({ scrollTop: aboutOffset }, 600);
     })
 
@@ -70,6 +73,11 @@ $(document).ready( function () {
     $('.link-3').on('click', function() {
 
         body.animate({ scrollTop: caseOffset }, 600);
+    })
+
+    $('.link-4').on('click', function() {
+
+        body.animate({ scrollTop: contactMe }, 600);
     })
 
 

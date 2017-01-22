@@ -1,5 +1,16 @@
 .how-i-work {
 
+    @include MQ(L) { padding-top: 8rem; }
+
+    p {
+
+        margin-bottom: 2rem;
+        text-align: center;
+        width: 80%;
+
+        @include MQ(M) { width: 60%; }
+    }
+
     .slides {
 
         padding: 0 3rem;
@@ -68,7 +79,7 @@
                 align-items: center;
                 display: flex;
                 flex: 1;
-                justify-content: center;
+                justify-content: flex-end;
 
                 svg {
 
@@ -94,13 +105,14 @@
 
                     align-items: flex-start;
                     flex: 1;
+
+                    h3 {
+
+                        border-left: 1px solid $c-pink;
+                        padding-left: 1rem;
+                    }
                 }
 
-                h3 {
-
-                    border-left: 1px solid $c-pink;
-                    padding-left: 1rem;
-                }
 
                 p {
 

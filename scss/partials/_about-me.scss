@@ -1,7 +1,10 @@
 .about-me {
 
+    @include MQ(L) { padding-top: 8rem; }
+
     .text {
 
+        margin-bottom: 4rem;
         @include MQ(M) { display: flex; }
 
         p {
@@ -174,7 +177,7 @@
 
                 color: $c-pink;
                 font-size: 200px;
-                opacity: 0.1;
+                opacity: 0.05;
                 position: absolute;
                 z-index: 0;
             }

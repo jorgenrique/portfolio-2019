@@ -74,6 +74,35 @@ Header
 Footer
 
 -------------------------------- */
+.header {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #D71955;
+  display: none;
+  justify-content: space-between;
+  left: 0;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2; }
+  @media only screen and (min-width: 1024px) {
+    .header {
+      display: flex; } }
+  .header .logo {
+    width: 212px; }
+    .header .logo svg {
+      width: 120px; }
+  .header .nav-items {
+    align-items: center;
+    display: flex; }
+    .header .nav-items > div,
+    .header .nav-items li {
+      margin: 0 1rem; }
+    .header .nav-items.links {
+      color: #D71955;
+      cursor: pointer; }
+
 .footer {
   align-items: center;
   background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.95) 70px);
@@ -153,7 +182,8 @@ Footer
         color: #D71955;
         cursor: pointer;
         margin: 2rem 0;
-        text-align: center; }
+        text-align: center;
+        transition: color 0.3s; }
         .footer .nav-items.links div:hover {
           color: #999; }
   .footer .logo {
@@ -180,7 +210,10 @@ Footer
 
 a {
   color: #D71955;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: color 0.3s; }
+  a:hover {
+    color: #999; }
 
 h2 {
   color: #999;
@@ -249,16 +282,21 @@ p.quote {
   flex-direction: column;
   width: 100vw;
   height: 100vh; }
+  @media only screen and (min-width: 1024px) {
+    .intro {
+      padding-top: 8rem; } }
+  .intro p {
+    text-align: center; }
   .intro .logo svg {
     margin-bottom: 2rem;
-    max-width: 800px;
-    width: 90vw; }
+    max-width: 700px;
+    width: 80vw; }
     @media only screen and (min-width: 768px) {
       .intro .logo svg {
-        width: 75vw; } }
+        width: 60vw; } }
     @media only screen and (min-width: 1024px) {
       .intro .logo svg {
-        width: 60vw; } }
+        width: 40vw; } }
   .intro .arrow-more {
     border: 1px solid #D71955;
     display: none;
@@ -283,13 +321,18 @@ p.quote {
     .intro .arrow-more:hover {
       transform: rotate(45deg) scale(0.9); }
 
-@media only screen and (min-width: 768px) {
-  .about-me .text {
-    display: flex; } }
-.about-me .text p {
-  flex: 1;
-  margin: 0;
-  padding: 0 1rem; }
+@media only screen and (min-width: 1024px) {
+  .about-me {
+    padding-top: 8rem; } }
+.about-me .text {
+  margin-bottom: 4rem; }
+  @media only screen and (min-width: 768px) {
+    .about-me .text {
+      display: flex; } }
+  .about-me .text p {
+    flex: 1;
+    margin: 0;
+    padding: 0 1rem; }
 .about-me .image {
   margin-bottom: 7rem;
   text-align: center;
@@ -410,7 +453,7 @@ p.quote {
       transform: translateX(-50%) translateY(-50%);
       color: #D71955;
       font-size: 200px;
-      opacity: 0.1;
+      opacity: 0.05;
       position: absolute;
       z-index: 0; }
     .timeline .main-info ul li {
@@ -435,6 +478,16 @@ p.quote {
     flex: 1;
     margin-bottom: 4rem; }
 
+@media only screen and (min-width: 1024px) {
+  .how-i-work {
+    padding-top: 8rem; } }
+.how-i-work p {
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 80%; }
+  @media only screen and (min-width: 768px) {
+    .how-i-work p {
+      width: 60%; } }
 .how-i-work .slides {
   padding: 0 3rem;
   position: relative;
@@ -477,7 +530,7 @@ p.quote {
       align-items: center;
       display: flex;
       flex: 1;
-      justify-content: center; }
+      justify-content: flex-end; }
       .how-i-work .slides .slide .image svg {
         max-width: 200px;
         opacity: 0.5;
@@ -495,14 +548,27 @@ p.quote {
       @media only screen and (min-width: 768px) {
         .how-i-work .slides .slide .info {
           align-items: flex-start;
-          flex: 1; } }
-      .how-i-work .slides .slide .info h3 {
-        border-left: 1px solid #D71955;
-        padding-left: 1rem; }
+          flex: 1; }
+          .how-i-work .slides .slide .info h3 {
+            border-left: 1px solid #D71955;
+            padding-left: 1rem; } }
       .how-i-work .slides .slide .info p {
         text-align: center; }
         @media only screen and (min-width: 768px) {
           .how-i-work .slides .slide .info p {
             text-align: left; } }
+
+@media only screen and (min-width: 1024px) {
+  .contact-me {
+    padding-top: 8rem; } }
+.contact-me a {
+  margin-top: 1rem; }
+.contact-me .nav-items {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; }
+  .contact-me .nav-items li {
+    margin: 0 1rem; }
 
 /*# sourceMappingURL=style.css.map */
