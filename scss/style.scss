@@ -1,12 +1,6 @@
-@import 'bourbon/bourbon'; // http://bourbon.io/
 @import 'partials/variables'; // colors, fonts etc...
-@import 'partials/mixins'; // custom mixins
-@import 'partials/layout'; // responsive grid and media queries
-@import 'partials/typography'; // typography specific styling
-@import 'partials/intro'; // intro specific styling
-@import 'partials/about-me'; // section specific styling
-@import 'partials/work-process'; // section specific styling
-@import 'partials/contact-me'; // section specific styling
+@import 'partials/mixins';
+@import 'partials/layout';
 
 *,
 *::after,
@@ -46,35 +40,3 @@ body {
 Main Components
 
 -------------------------------- */
-
-.cd-section {
-
-	background-color: $c-white;
-	padding-top: 135px;
-	position:relative;
-
-	h2 {
-
-		line-height: 1.5;
-		text-align: center;
-		font-size: 1.5rem;
-		color:$c-lightgrey;
-	}
-
-	h5 {
-
-		line-height: 1.5;
-		text-align: center;
-		font-size: 1rem;
-		color:$c-lightgrey;
-	}
-
-	@include MQ(L) {
-
-		h2 {
-
-			font-size: 2rem;
-			font-weight: 300;
-		}
-	}
-}

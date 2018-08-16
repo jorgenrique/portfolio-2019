@@ -41,10 +41,6 @@
 
         @media only screen and (min-width: $S) { @content; }
 
-    } @else if $canvas == SM {
-
-        @media only screen and (min-width: $SM) { @content; }
-
     } @else if $canvas == M {
 
         @media only screen and (min-width: $M) { @content; }

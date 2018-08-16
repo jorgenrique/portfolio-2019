@@ -8,7 +8,26 @@ $(document).ready( function () {
         slideWidth = $('.how-i-work .slides-container').width(),
         slideElements = $('.how-i-work .slide'),
         slideGallery = $('.how-i-work .slide-gallery'),
-        slideNumber = 1
+        slideNumber = 1,
+        header = $('header')
+
+    $(window).scroll(function() {
+
+        var scroll = $(window).scrollTop();
+
+        if ( $(window).width() > 1024 ) {
+
+            if (scroll >= aboutOffset) {
+
+                $(".header").addClass("fixedHeader");
+
+            } else {
+
+                $(".header").removeClass("fixedHeader");
+            }
+        }
+    })
+
 
     slideElements.css( 'width', slideWidth )
     slideGallery.css('width', ( ( slideWidth + 8 ) * slideElements.size() ) )
@@ -28,9 +47,6 @@ $(document).ready( function () {
             $(this).removeClass('show')
             slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
         }
-
-        console.log(slideNumber)
-
     })
 
 
@@ -49,13 +65,9 @@ $(document).ready( function () {
             $(this).removeClass('show')
             slideGallery.css('marginLeft', ( - slideWidth * ( slideNumber - 1 ) ) )
         }
-
-        console.log(slideNumber)
     })
 
     $('.arrow-more').on('click', function() {
-
-        console.log(aboutOffset);
 
         body.animate({ scrollTop: aboutOffset }, 600);
     })
@@ -100,12 +112,9 @@ $(document).ready( function () {
         var yearId = $(this).attr('id')
         var showYear = $('.' + yearId)
 
-        console.log(showYear);
-
         $('.years-cont li').removeClass('active')
         $('.timeline .main-info ul.show').removeClass('show')
         $(this).addClass('active')
         showYear.addClass('show')
-
     })
 })
