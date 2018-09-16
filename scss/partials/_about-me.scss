@@ -1,0 +1,65 @@
+.about-me {
+
+    background: $c-black;
+    bottom: 0;
+    color: $c-white;
+    left: 0;
+    margin-left: 100%;
+    padding: 24px 16px;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s;
+    width: 100vw;
+    z-index: -2;
+
+    &.show {
+
+        margin-left: 0;
+        z-index: 4;
+    }
+
+    .close-wrapper {
+
+        display: flex;
+        justify-content: flex-end;
+
+        .about-me-close {
+
+            align-items: center;
+            border: 1px solid $c-white;
+            cursor: pointer;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s;
+            width: 40px;
+
+            span {
+
+                position: relative;
+                text-transform: uppercase;
+                z-index: 2;
+            }
+
+            &:after {
+
+                background-color: $c-white;
+                bottom: 0;
+                content: '';
+                left: 0;
+                position: absolute;
+                right: 100%;
+                top:0;
+                transition: all 0.3s;
+                z-index: 0;
+            }
+
+            &:hover {
+
+                color: $c-black;
+                &:after { right: 0; }
+            }
+        }
+    }
+}

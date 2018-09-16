@@ -1,6 +1,13 @@
 @import 'partials/variables'; // colors, fonts etc...
+
 @import 'partials/mixins';
+@import 'partials/typography';
+
 @import 'partials/layout';
+
+@import 'partials/header';
+@import 'partials/about-me';
+@import 'partials/bg-image';
 
 *,
 *::after,
@@ -16,7 +23,7 @@ body {
 		family: $primary-font;
 	}
 
-	color: $c-lightgrey;
+	color: $c-black;
 	background-color:$c-white;
 
 	@include font-smoothing;

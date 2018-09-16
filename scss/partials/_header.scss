@@ -1,0 +1,52 @@
+.header {
+
+    background-image: linear-gradient($c-white 15%, rgba($c-white, 0));
+    display: flex;
+    justify-content: center;
+    left: 0;
+    padding: 12px 24px 24px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    .header-wrapper {
+
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .logo {
+
+        height: 60px;
+        svg { height: 100%; }
+    }
+
+    .mobile { @include MQ(M) { display: none; } }
+
+    .desktop {
+
+        display: none;
+        @include MQ(M) { display: block; }
+    }
+
+    .contact {
+
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 18px;
+
+        a {
+
+            color: $c-black;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .email { margin-right: 16px; }
+    }
+}

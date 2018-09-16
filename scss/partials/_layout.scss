@@ -1,90 +1,24 @@
-/* --------------------------------
-
-Primary style
-
--------------------------------- */
-
-*,
-*::after,
-*::before { box-sizing: border-box }
-
-html {
-
-    font-size:16px;
-
-    @include MQ(L) { font-size: 18px }
-}
-
-body {
-
-    background-color:$c-white;
-	color: $c-lightgrey;
-    font: { family: $primary-font; } // variables inside partials > _variables.scss
-
-    @include font-smoothing;
-
-	&::before {
-		/* never visible - this is used in jQuery to check the current MQ */
-		content: 'mobile';
-		display: none;
-	}
-}
-
 .wrapper {
 
-    background-color: #ccc;
-
     display: flex;
-    flex-direction: column;
-
-    > div { flex-grow: 1 }
-
-    @include MQ(M) {
-
-        flex-direction: row-reverse;
-
-        .cont-1 {
-
-            height: 100vh;
-            max-width: 320px;
-            width: 320px;
-        }
-    }
+    height: 100vh;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 84px 24px 24px;
+    position: relative;
+    width: 100%;
 }
 
-.cont-1 {
+.container {
 
-    background-color: red;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
 
-    .image {
+    .wrapper-container {
 
-        background-color: $c-white;
-        height: 320px;
+        max-width: 700px;
         width: 100%;
-
-        @include MQ(M) { width: 320px; }
-    }
-}
-
-.cont-2 {
-
-    background-color: blue;
-
-    @include MQ(M) { position: relative; }
-
-    .cities {
-
-        background-color: $c-pink;
-        color: $c-white;
-        padding: 20px;
-
-        @include MQ(L) {
-
-            bottom: 75%;
-            left: 0;
-            position: absolute;
-            right: 50%;
-            top: 0;
-        }
     }
 }

@@ -1,70 +1,127 @@
-/* --------------------------------
-
-Primary style
-
--------------------------------- */
-*,
-*::after,
-*::before {
-  box-sizing: border-box; }
-
-html {
-  font-size: 16px; }
-  @media only screen and (min-width: 1024px) {
-    html {
-      font-size: 18px; } }
-
-body {
-  background-color: #fff;
-  color: #999;
-  font-family: "Open Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  body::before {
-    /* never visible - this is used in jQuery to check the current MQ */
-    content: 'mobile';
-    display: none; }
-
 .wrapper {
-  background-color: #ccc;
   display: flex;
-  flex-direction: column; }
-  .wrapper > div {
-    flex-grow: 1; }
-  @media only screen and (min-width: 768px) {
-    .wrapper {
-      flex-direction: row-reverse; }
-      .wrapper .cont-1 {
-        height: 100vh;
-        max-width: 320px;
-        width: 320px; } }
+  height: 100vh;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 84px 24px 24px;
+  position: relative;
+  width: 100%; }
 
-.cont-1 {
-  background-color: red; }
-  .cont-1 .image {
-    background-color: #fff;
-    height: 320px;
+.container {
+  max-width: 1200px;
+  position: relative;
+  width: 100%;
+  z-index: 2; }
+  .container .wrapper-container {
+    max-width: 700px;
     width: 100%; }
-    @media only screen and (min-width: 768px) {
-      .cont-1 .image {
-        width: 320px; } }
 
-.cont-2 {
-  background-color: blue; }
+.header {
+  background-image: linear-gradient(#fff 15%, rgba(255, 255, 255, 0));
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 12px 24px 24px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10; }
+  .header .header-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%; }
+  .header .logo {
+    height: 60px; }
+    .header .logo svg {
+      height: 100%; }
   @media only screen and (min-width: 768px) {
-    .cont-2 {
-      position: relative; } }
-  .cont-2 .cities {
-    background-color: #D71955;
-    color: #fff;
-    padding: 20px; }
-    @media only screen and (min-width: 1024px) {
-      .cont-2 .cities {
-        bottom: 75%;
+    .header .mobile {
+      display: none; } }
+  .header .desktop {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .header .desktop {
+        display: block; } }
+  .header .contact {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px; }
+    .header .contact a {
+      color: #222;
+      font-size: 14px;
+      text-decoration: none; }
+    .header .contact .email {
+      margin-right: 16px; }
+
+.about-me {
+  background: #222;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  margin-left: 100%;
+  padding: 24px 16px;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 100vw;
+  z-index: -2; }
+  .about-me.show {
+    margin-left: 0;
+    z-index: 4; }
+  .about-me .close-wrapper {
+    display: flex;
+    justify-content: flex-end; }
+    .about-me .close-wrapper .about-me-close {
+      align-items: center;
+      border: 1px solid #fff;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      position: relative;
+      transition: all 0.3s;
+      width: 40px; }
+      .about-me .close-wrapper .about-me-close span {
+        position: relative;
+        text-transform: uppercase;
+        z-index: 2; }
+      .about-me .close-wrapper .about-me-close:after {
+        background-color: #fff;
+        bottom: 0;
+        content: '';
         left: 0;
         position: absolute;
-        right: 50%;
-        top: 0; } }
+        right: 100%;
+        top: 0;
+        transition: all 0.3s;
+        z-index: 0; }
+      .about-me .close-wrapper .about-me-close:hover {
+        color: #222; }
+        .about-me .close-wrapper .about-me-close:hover:after {
+          right: 0; }
+
+.bg-image {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  top: 0; }
+  .bg-image img {
+    height: 100%; }
+  .bg-image:after {
+    background-color: rgba(255, 255, 255, 0.7);
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0; }
+    @media only screen and (min-width: 1024px) {
+      .bg-image:after {
+        display: none; } }
 
 *,
 *::after,
@@ -77,7 +134,7 @@ html {
 body {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
-  color: #999;
+  color: #222;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
