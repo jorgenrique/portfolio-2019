@@ -1,0 +1,31 @@
+a {
+
+    color: $c-black;
+}
+
+h2 {
+
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+}
+
+h3 {
+
+    background-color: $c-black;
+    color: $c-white;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+
+    a { color: $c-white }
+}
+
+h4 {
+
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+p {
+
+    margin-bottom: 12px;
+}

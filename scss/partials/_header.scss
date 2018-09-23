@@ -1,6 +1,6 @@
 .header {
 
-    background-image: linear-gradient($c-white 15%, rgba($c-white, 0));
+    background-image: linear-gradient(to right, rgba($c-white, 0) 50%, $c-white);
     display: flex;
     justify-content: center;
     left: 0;
@@ -38,7 +38,6 @@
         align-items: center;
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 18px;
 
         a {
 

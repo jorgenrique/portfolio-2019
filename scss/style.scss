@@ -6,14 +6,28 @@
 @import 'partials/layout';
 
 @import 'partials/header';
-@import 'partials/about-me';
 @import 'partials/bg-image';
 
 *,
 *::after,
 *::before { box-sizing: border-box; }
 
-html { font-size:18px;}
+::selection {
+
+  background: $c-black;
+  color: $c-white;
+}
+::-moz-selection {
+
+  background: $c-black;
+  color: $c-white;
+}
+
+html {
+
+	font-size:16px;
+	line-height: 1.2;
+}
 
 body {
 
@@ -21,6 +35,7 @@ body {
 
 		size: 1rem;
 		family: $primary-font;
+		line-height: 1.2;
 	}
 
 	color: $c-black;

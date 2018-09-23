@@ -1,9 +1,31 @@
+a {
+  color: #222; }
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 24px; }
+
+h3 {
+  background-color: #222;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 18px; }
+  h3 a {
+    color: #fff; }
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 15px; }
+
+p {
+  margin-bottom: 12px; }
+
 .wrapper {
   display: flex;
   height: 100vh;
   justify-content: center;
   overflow-x: hidden;
-  padding: 84px 24px 24px;
+  padding: 96px 24px 0;
   position: relative;
   width: 100%; }
 
@@ -14,10 +36,31 @@
   z-index: 2; }
   .container .wrapper-container {
     max-width: 700px;
+    padding-bottom: 84px;
     width: 100%; }
+    @media only screen and (min-width: 1024px) {
+      .container .wrapper-container {
+        margin-left: 100px; } }
+  .container .section {
+    margin-bottom: 84px; }
+    .container .section .section-container {
+      margin-bottom: 36px; }
+  .container .intro {
+    padding: 36px 0; }
+  .container .logos .tiles {
+    display: flex;
+    flex-wrap: wrap; }
+    .container .logos .tiles li {
+      padding: 24px;
+      width: 100%; }
+      @media only screen and (min-width: 420px) {
+        .container .logos .tiles li {
+          width: 50%; } }
+      .container .logos .tiles li img {
+        width: 100%; }
 
 .header {
-  background-image: linear-gradient(#fff 15%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #fff);
   display: flex;
   justify-content: center;
   left: 0;
@@ -47,61 +90,13 @@
   .header .contact {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 18px; }
+    justify-content: flex-end; }
     .header .contact a {
       color: #222;
       font-size: 14px;
       text-decoration: none; }
     .header .contact .email {
       margin-right: 16px; }
-
-.about-me {
-  background: #222;
-  bottom: 0;
-  color: #fff;
-  left: 0;
-  margin-left: 100%;
-  padding: 24px 16px;
-  position: absolute;
-  top: 0;
-  transition: all 0.3s;
-  width: 100vw;
-  z-index: -2; }
-  .about-me.show {
-    margin-left: 0;
-    z-index: 4; }
-  .about-me .close-wrapper {
-    display: flex;
-    justify-content: flex-end; }
-    .about-me .close-wrapper .about-me-close {
-      align-items: center;
-      border: 1px solid #fff;
-      cursor: pointer;
-      display: flex;
-      height: 40px;
-      justify-content: center;
-      position: relative;
-      transition: all 0.3s;
-      width: 40px; }
-      .about-me .close-wrapper .about-me-close span {
-        position: relative;
-        text-transform: uppercase;
-        z-index: 2; }
-      .about-me .close-wrapper .about-me-close:after {
-        background-color: #fff;
-        bottom: 0;
-        content: '';
-        left: 0;
-        position: absolute;
-        right: 100%;
-        top: 0;
-        transition: all 0.3s;
-        z-index: 0; }
-      .about-me .close-wrapper .about-me-close:hover {
-        color: #222; }
-        .about-me .close-wrapper .about-me-close:hover:after {
-          right: 0; }
 
 .bg-image {
   bottom: 0;
@@ -111,7 +106,7 @@
   .bg-image img {
     height: 100%; }
   .bg-image:after {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
     bottom: 0;
     content: '';
     left: 0;
@@ -128,12 +123,22 @@
 *::before {
   box-sizing: border-box; }
 
+::selection {
+  background: #222;
+  color: #fff; }
+
+::-moz-selection {
+  background: #222;
+  color: #fff; }
+
 html {
-  font-size: 18px; }
+  font-size: 16px;
+  line-height: 1.2; }
 
 body {
   font-size: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-line-height: 1.2;
   color: #222;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;

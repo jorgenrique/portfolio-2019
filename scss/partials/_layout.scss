@@ -4,7 +4,7 @@
     height: 100vh;
     justify-content: center;
     overflow-x: hidden;
-    padding: 84px 24px 24px;
+    padding: 96px 24px 0;
     position: relative;
     width: 100%;
 }
@@ -19,6 +19,36 @@
     .wrapper-container {
 
         max-width: 700px;
+        padding-bottom: 84px;
         width: 100%;
+
+        @include MQ(L) { margin-left: 100px }
+        @include MQ(XL) { margin-left: 250px }
+    }
+
+    .section {
+
+        margin-bottom: 84px;
+        .section-container { margin-bottom: 36px; }
+    }
+
+    .intro { padding: 36px 0; }
+
+    .logos {
+
+        .tiles {
+
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+
+                padding: 24px;
+                width: 100%;
+                @include MQ(S) { width: 50%; }
+
+                img { width: 100%; }
+            }
+        }
     }
 }
