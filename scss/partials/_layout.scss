@@ -32,7 +32,18 @@
         .section-container { margin-bottom: 36px; }
     }
 
-    .intro { padding: 36px 0; }
+    .intro {
+
+        padding: 36px 0;
+
+        .underline {
+
+            padding: 3px 0;
+            span { text-decoration: underline; }
+            &:after { background-color: $c-white }
+            &:hover { span { color: $c-black; } }
+        }
+    }
 
     .logos {
 
@@ -50,5 +61,12 @@
                 img { width: 100%; }
             }
         }
+    }
+
+    .links {
+
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
     }
 }

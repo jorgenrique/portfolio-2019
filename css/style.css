@@ -9,7 +9,8 @@ h3 {
   background-color: #222;
   color: #fff;
   font-size: 1.5rem;
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+  padding-left: 6px; }
   h3 a {
     color: #fff; }
 
@@ -19,6 +20,35 @@ h4 {
 
 p {
   margin-bottom: 12px; }
+
+.underline {
+  padding: 12px 0;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative; }
+  .underline span {
+    position: relative;
+    z-index: 2;
+    -webkit-transition: all 0.3s;
+    /* Safari */
+    transition: all 0.3s; }
+  .underline:after {
+    content: "";
+    background-color: #222;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    z-index: 0;
+    -webkit-transition: all 0.3s;
+    /* Safari */
+    transition: all 0.3s; }
+  .underline:hover span {
+    color: #fff;
+    padding: 0 12px; }
+  .underline:hover:after {
+    right: 0; }
 
 .wrapper {
   display: flex;
@@ -47,6 +77,14 @@ p {
       margin-bottom: 36px; }
   .container .intro {
     padding: 36px 0; }
+    .container .intro .underline {
+      padding: 3px 0; }
+      .container .intro .underline span {
+        text-decoration: underline; }
+      .container .intro .underline:after {
+        background-color: #fff; }
+      .container .intro .underline:hover span {
+        color: #222; }
   .container .logos .tiles {
     display: flex;
     flex-wrap: wrap; }
@@ -58,13 +96,17 @@ p {
           width: 50%; } }
       .container .logos .tiles li img {
         width: 100%; }
+  .container .links {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column; }
 
 .header {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #fff);
   display: flex;
   justify-content: center;
   left: 0;
-  padding: 12px 24px 24px;
+  padding: 12px 24px;
   position: fixed;
   right: 0;
   top: 0;
@@ -95,8 +137,13 @@ p {
       color: #222;
       font-size: 14px;
       text-decoration: none; }
+      .header .contact a img {
+        height: 24px; }
     .header .contact .email {
       margin-right: 16px; }
+      .header .contact .email img {
+        height: 20px;
+        margin-top: 4px; }
 
 .bg-image {
   bottom: 0;
@@ -117,6 +164,23 @@ p {
     @media only screen and (min-width: 1024px) {
       .bg-image:after {
         display: none; } }
+
+.testimonials .testimonial {
+  position: relative; }
+  .testimonials .testimonial p {
+    font-style: italic; }
+  .testimonials .testimonial .position {
+    font-size: 0.8rem; }
+  .testimonials .testimonial:after {
+    content: "";
+    background: url(../img/quote.png) no-repeat;
+    height: 33px;
+    left: 0;
+    opacity: 0.15;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: -1; }
 
 *,
 *::after,

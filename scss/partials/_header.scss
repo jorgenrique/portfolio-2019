@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     left: 0;
-    padding: 12px 24px 24px;
+    padding: 12px 24px;
     position: fixed;
     right: 0;
     top: 0;
@@ -44,8 +44,19 @@
             color: $c-black;
             font-size: 14px;
             text-decoration: none;
+
+            img { height: 24px; }
         }
 
-        .email { margin-right: 16px; }
+        .email {
+
+            margin-right: 16px;
+
+            img {
+
+                height: 20px;
+                margin-top: 4px;
+            }
+        }
     }
 }
