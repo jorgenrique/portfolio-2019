@@ -1,0 +1,60 @@
+.testimonial {
+
+    max-width: 400px;
+    padding: 1rem 0;
+    position: relative;
+
+    .quote {
+
+        font-style: italic;
+        margin-bottom: 0.5rem;
+        position: relative;
+    }
+
+    .quotes {
+
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.case {
+
+    padding: 1rem 0;
+    p {margin: 0;}
+}
+
+.job {
+
+    padding: 0 0 24px 24px;
+    position: relative;
+
+    h5 { padding: 1rem 0 }
+
+    &:last-child:before { display: none; }
+
+    &:after {
+
+        content: "";
+        background-color: $c-primary;
+        border-radius: 50%;
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: 8px;
+        width: 16px;
+    }
+
+    &:before {
+
+        content: "";
+        background-color: $c-primary;
+        border-radius: 50%;
+        bottom: -24px;
+        left: 7px;
+        position: absolute;
+        top: 8px;
+        width: 2px;
+    }
+}

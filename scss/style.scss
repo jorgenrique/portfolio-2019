@@ -5,9 +5,11 @@
 
 @import 'partials/layout';
 
-@import 'partials/header';
-@import 'partials/bg-image';
-@import 'partials/testimonials';
+@import 'partials/navigation';
+@import 'partials/overlay';
+
+@import 'partials/content-sections';
+
 
 *,
 *::after,
@@ -15,19 +17,28 @@
 
 ::selection {
 
-  background: $c-black;
+  background: $c-primary;
   color: $c-white;
 }
 ::-moz-selection {
 
-  background: $c-black;
+  background: $c-primary;
   color: $c-white;
 }
 
-html {
+html,
+body {
 
-	font-size:16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	font-size: 14px;
+
 	line-height: 1.2;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
 }
 
 body {
@@ -36,30 +47,9 @@ body {
 
 		size: 1rem;
 		family: $primary-font;
-		line-height: 1.2;
 	}
 
 	color: $c-black;
-	background-color:$c-white;
 
 	@include font-smoothing;
-
-	&::before {
-		content: 'mobile';
-		display: none;
-	}
-
-	@include MQ(L) {
-
-		&::before {
-			/* never visible - this is used in jQuery to check the current MQ */
-			content: 'desktop';
-		}
-	}
 }
-
-/* --------------------------------
-
-Main Components
-
--------------------------------- */

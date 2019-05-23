@@ -1,0 +1,242 @@
+.overlay {
+
+    background-image: linear-gradient(to bottom right, $c-white 50%, $c-lightgrey);
+    bottom: 0;
+    border-radius: 0 8px 8px 0;
+    left: 100%;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 4;
+
+    &.show {
+
+        left: 0;
+
+        @include MQ(L) { left: 300px; }
+        @include MQ(XL) { left: 400px; }
+
+        header {
+
+            left: 16px;
+
+            @include MQ(M) { left: 24px }
+
+            @include MQ(L) {
+
+                left: auto;
+                right: 24px;
+            }
+        }
+
+        footer {
+
+            bottom: 0;
+
+            @include MQ(L) {
+
+                bottom: 0;
+                right: 32px;
+            }
+        }
+    }
+
+    header {
+
+        display: flex;
+        position: fixed;
+        left: -100%;
+        top: 24px;
+        z-index: 12;
+
+        @include MQ(L) {
+
+            display: block;
+            position: absolute;
+            right: -100px;
+            top: 32px;
+        }
+
+        .logo-mob {
+
+            height: 40px;
+            margin-left: 16px;
+            img { height: 100% }
+
+            @include MQ(L) { display: none; }
+        }
+
+        .close-overlay { cursor: pointer; }
+    }
+
+    .letter {
+
+        bottom: 100%;
+        position: fixed;
+        right: 24px;
+        z-index: 6;
+
+        @include MQ(L) {
+
+            // On desktop, the letter is coming from the bottom, and it's relative to the container
+            bottom: auto;
+            left: 0;
+            position: absolute;
+            right: auto;
+            top: 100%;
+        }
+
+        &.active {
+
+            bottom: 80px;
+            @include MQ(L) { top: 32px; }
+        }
+    }
+
+    .content {
+
+        height: 100%;
+        left: 0;
+        overflow: auto;
+        padding: 80px 16px;
+        position: fixed;
+        top: 100%;
+        width: 100%;
+        z-index: 8;
+
+        @include MQ(L) {
+
+            bottom: 100%;
+            height: 100%;
+            padding: 80px 80px 80px 16px;
+            position: absolute;
+            top: auto;
+        }
+
+        &.active {
+
+            top: 0;
+
+            @include MQ(L) {
+
+                bottom: 0;
+                top: auto;
+            }
+        }
+    }
+
+    footer {
+
+        background-image: linear-gradient(to bottom, rgba($c-white, 0), rgba($c-white, 1) 75%);
+        bottom: -100%;
+        display: flex;
+        left: 0;
+        padding: 24px 0;
+        position: fixed;
+        right: 0;
+        z-index: 10;
+
+        @include MQ(L) {
+
+            background-image: none;
+            bottom: 0;
+            justify-content: flex-end;
+            position: absolute;
+            right: -100px;
+
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+
+            -webkit-transform-origin: 100%;
+            -moz-transform-origin: 100%;
+            -o-transform-origin: 100%;
+            -ms-transform-origin: 100%;
+            transform-origin: 100%;
+
+
+        }
+
+        .menu-item {
+
+            display: flex;
+            color: $c-primary;
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            justify-content: center;
+            position: relative;
+
+            position: relative;
+
+            .und_text {
+
+                position: relative;
+                z-index: 2;
+            }
+
+            &:after {
+
+                @include MQ(L) { content: ""; }
+
+                background-color: $c-primary;
+                bottom: -2px;
+                height: 2px;
+                left: 0;
+                position: absolute;
+                right: 100%;
+                z-index: 2;
+
+                -webkit-transition: all 200ms ease-in-out;
+                -ms-transition: all 200ms ease-in-out;
+                -moz-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover:after { right: 0 }
+
+            &.active {
+
+                color: $c-black;
+                cursor: default;
+
+                &:after {
+
+                    @include MQ(L) { content: ""; }
+
+                    background-color: $c-black;
+                    bottom: -2px;
+                    height: 2px;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    z-index: 3;
+                }
+            }
+
+            @include MQ(M) {
+
+                font-size: 1rem;
+                font-weight: 400;
+            }
+
+            @include MQ(L) {
+
+                display: block;
+                margin-left: 24px;
+                flex: initial;
+                font-size: 0.9rem;
+            }
+
+            span {
+
+                display: none;
+                @include MQ(M) { display: inline-block; }
+            }
+        }
+    }
+}

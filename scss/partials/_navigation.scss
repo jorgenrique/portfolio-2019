@@ -1,0 +1,78 @@
+.navigation {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @include MQ(L) { width: 600px; }
+    @include MQ(XL) { width: 800px; }
+
+    .tile {
+
+        align-items: center;
+        background-image: linear-gradient(to bottom right, $c-white 50%, $c-lightgrey);
+        border-radius: 4px;
+        display: flex;
+        height: 50vw;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 50vw;
+
+        &:hover {
+
+            cursor: pointer;
+
+            img {
+
+                max-width: 100%;
+                width: 100%;
+
+                -webkit-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+        }
+
+        @include MQ(S) {
+
+            height: 25vw;
+            width: 25vw;
+        }
+
+        @include MQ(L) {
+
+            height: 300px;
+            width: 300px;
+        }
+
+        @include MQ(XL) {
+
+            height: 400px;
+            width: 400px;
+        }
+
+        &:nth-child(2) {
+            @include MQ(L) { border-radius: 0px 8px 0px 0px }
+        }
+
+        &:nth-child(4) {
+            @include MQ(L) { border-radius: 0px 0px 8px 0px }
+        }
+
+        img {
+
+            bottom: 24px;
+            max-width: 225px;
+            position: absolute;
+            right: 0;
+            width: 80%;
+        }
+
+        .title {
+
+            font-weight: 600;
+            span { color: $c-primary; }
+        }
+    }
+}

@@ -1,23 +1,23 @@
 // colors
 
+$c-primary: #ff00ff;
 $c-black: #222;
-$c-lightgrey: #999;
-$c-pink: #D71955;
+$c-lightgrey: #eee;
 $c-white: #fff;
 
 
 // fonts
 
-$primary-font: 'Roboto Mono', monospace;
+$primary-font: Helvetica, Arial, sans-serif;
 
 
 // breakpoints
 
 // will not use these
-// $S: 480px;
+
 // $SM: 640px;
 
-$S: 420px;
+$S: 480px;
 $M: 768px;
 $L: 1024px;
 $XL: 1200px;
