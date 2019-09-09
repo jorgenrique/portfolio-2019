@@ -1,22 +1,27 @@
 .navigation {
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
     @include MQ(L) { width: 600px; }
     @include MQ(XL) { width: 800px; }
 
+    @include MQ(S) {
+
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .tile {
 
-        align-items: center;
+        align-items: flex-start;
         background-image: linear-gradient(to bottom right, $c-white 50%, $c-lightgrey);
-        border-radius: 4px;
         display: flex;
-        height: 50vw;
+        flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        padding: 24px 16px;
         position: relative;
-        width: 50vw;
 
         &:hover {
 
@@ -24,8 +29,8 @@
 
             img {
 
-                max-width: 100%;
-                width: 100%;
+                // max-width: 100%;
+                // width: 100%;
 
                 -webkit-transform: scale(1.5);
                 -ms-transform: scale(1.5);
@@ -36,12 +41,13 @@
 
         @include MQ(S) {
 
-            height: 25vw;
-            width: 25vw;
+            justify-content: flex-start;
+            width: 50vw;
         }
 
         @include MQ(L) {
 
+            border: 2px solid $c-black;
             height: 300px;
             width: 300px;
         }
@@ -52,18 +58,10 @@
             width: 400px;
         }
 
-        &:nth-child(2) {
-            @include MQ(L) { border-radius: 0px 8px 0px 0px }
-        }
-
-        &:nth-child(4) {
-            @include MQ(L) { border-radius: 0px 0px 8px 0px }
-        }
-
         img {
 
             bottom: 24px;
-            max-width: 225px;
+            max-width: 160px;
             position: absolute;
             right: 0;
             width: 80%;
@@ -73,6 +71,12 @@
 
             font-weight: 600;
             span { color: $c-primary; }
+        }
+
+        h6 {
+
+            color: $c-primary;
+            text-decoration: underline;
         }
     }
 }

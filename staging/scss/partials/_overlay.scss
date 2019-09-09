@@ -2,7 +2,6 @@
 
     background-image: linear-gradient(to bottom right, $c-white 50%, $c-lightgrey);
     bottom: 0;
-    border-radius: 0 8px 8px 0;
     left: 100%;
     right: 0;
     top: 0;
@@ -14,14 +13,17 @@
 
         left: 0;
 
-        @include MQ(L) { left: 300px; }
+        @include MQ(L) {
+
+            border: 2px solid $c-black;
+            left: 300px;
+        }
+
         @include MQ(XL) { left: 400px; }
 
         header {
 
-            left: 16px;
-
-            @include MQ(M) { left: 24px }
+            left: 0px;
 
             @include MQ(L) {
 
@@ -47,7 +49,7 @@
         display: flex;
         position: fixed;
         left: -100%;
-        top: 24px;
+        top: 0px;
         z-index: 12;
 
         @include MQ(L) {
@@ -67,7 +69,16 @@
             @include MQ(L) { display: none; }
         }
 
-        .close-overlay { cursor: pointer; }
+        .close-overlay {
+
+            align-items: center;
+            background: $c-black;
+            cursor: pointer;
+            display: flex;
+            height: 48px;
+            justify-content: center;
+            width: 48px;
+        }
     }
 
     .letter {

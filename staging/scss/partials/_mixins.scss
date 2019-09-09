@@ -26,6 +26,13 @@
     }
 }
 
+@mixin transition($time:400ms) {
+    -webkit-transition: all $time ease-in-out;
+    -ms-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+
 // antialiasing mode font rendering
 
 @mixin font-smoothing {
