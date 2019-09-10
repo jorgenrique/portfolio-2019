@@ -28,7 +28,8 @@
             @include MQ(L) {
 
                 left: auto;
-                right: 24px;
+                right: 0;
+                top: 0;
             }
         }
 
@@ -39,7 +40,8 @@
             @include MQ(L) {
 
                 bottom: 0;
-                right: 32px;
+                padding: 14px 0;
+                right: 24px;
             }
         }
     }
@@ -57,7 +59,7 @@
             display: block;
             position: absolute;
             right: -100px;
-            top: 32px;
+            top: 0;
         }
 
         .logo-mob {
@@ -72,7 +74,7 @@
         .close-overlay {
 
             align-items: center;
-            background: $c-black;
+            background: $c-primary;
             cursor: pointer;
             display: flex;
             height: 48px;
@@ -240,7 +242,8 @@
                 display: block;
                 margin-left: 24px;
                 flex: initial;
-                font-size: 0.9rem;
+                font-weight: 600;
+                text-transform: uppercase;
             }
 
             span {

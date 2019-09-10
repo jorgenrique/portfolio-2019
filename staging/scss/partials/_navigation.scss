@@ -75,8 +75,10 @@
 
         h6 {
 
-            color: $c-primary;
-            text-decoration: underline;
+            background-color: $c-primary;
+            color: $c-black;
+            padding: 4px 8px;
+            text-transform: uppercase;
         }
     }
 }

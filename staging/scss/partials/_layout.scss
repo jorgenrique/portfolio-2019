@@ -55,7 +55,7 @@
 
         &:after {
 
-            background-color: $c-primary;
+            background-color: $c-white;
             border: 3px solid $c-black;
             bottom: 200px;
             content: '';
@@ -119,7 +119,7 @@
         @include MQ(L) {
 
             border: 2px solid $c-black;
-            padding: 40px 16px;
+            padding: 120px 16px;
             width: 300px;
         }
 
@@ -146,10 +146,10 @@
             @include MQ(L) {
 
                 position: static;
-                margin-bottom: 2rem;
+                margin-bottom: 6rem;
             }
 
-            img { height: 40px; }
+            img { height: 48px; }
 
             @include transition(200ms);
 

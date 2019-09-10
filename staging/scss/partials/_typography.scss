@@ -19,9 +19,11 @@ p { margin-bottom: 1rem }
 
     overflow: hidden;
     position: relative;
+    text-transform: uppercase;
 
     .und_text {
 
+        font-weight: 600;
         position: relative;
         z-index: 2;
     }
