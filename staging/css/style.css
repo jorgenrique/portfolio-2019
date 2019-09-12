@@ -68,10 +68,14 @@ p {
     .wrapper.loaded:after {
       bottom: -24px;
       height: 200px;
-      opacity: 1; }
+      opacity: 1;
+      right: -24px;
+      width: 100px; }
     .wrapper.loaded:before {
       left: -24px;
+      height: 300px;
       opacity: 1;
+      top: -24px;
       width: 400px; }
   @media only screen and (min-width: 1024px) {
     .wrapper {
@@ -81,20 +85,6 @@ p {
       height: 600px;
       min-height: auto;
       width: 900px; }
-      .wrapper:before {
-        border: 3px solid #222;
-        content: '';
-        height: 300px;
-        left: 400px;
-        opacity: 0;
-        position: absolute;
-        top: -24px;
-        width: 0;
-        z-index: -1;
-        -webkit-transition: all 100ms ease-in-out;
-        -ms-transition: all 100ms ease-in-out;
-        -moz-transition: all 100ms ease-in-out;
-        transition: all 100ms ease-in-out; }
       .wrapper:after {
         background-color: #fff;
         border: 3px solid #222;
@@ -103,8 +93,22 @@ p {
         height: 0;
         opacity: 0;
         position: absolute;
-        right: -24px;
-        width: 100px;
+        right: 0;
+        width: 0;
+        z-index: -1;
+        -webkit-transition: all 100ms ease-in-out;
+        -ms-transition: all 100ms ease-in-out;
+        -moz-transition: all 100ms ease-in-out;
+        transition: all 100ms ease-in-out; }
+      .wrapper:before {
+        border: 3px solid #222;
+        content: '';
+        height: 0;
+        left: 400px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
         z-index: -1;
         -webkit-transition: all 100ms ease-in-out;
         -ms-transition: all 100ms ease-in-out;
@@ -139,7 +143,9 @@ p {
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-start;
-    padding: 120px 16px 40px; }
+    overflow: hidden;
+    padding: 120px 16px 40px;
+    position: relative; }
     @media only screen and (min-width: 1024px) {
       .wrapper .main {
         border: 2px solid #222;
@@ -194,41 +200,51 @@ p {
   transition: all 800ms cubic-bezier(0.1, 2.7, 0.58, 1); }
 
 .navigation {
+  background-color: #fff;
   display: flex;
   flex-direction: column; }
-  @media only screen and (min-width: 1024px) {
-    .navigation {
-      width: 600px; } }
   @media only screen and (min-width: 480px) {
     .navigation {
+      border-bottom: 2px solid #222;
+      border-top: 2px solid #222;
       flex-direction: row;
       flex-wrap: wrap; } }
+  @media only screen and (min-width: 1024px) {
+    .navigation {
+      border: none;
+      width: 600px; } }
   .navigation .tile {
     align-items: flex-start;
-    background-image: linear-gradient(to bottom right, #fff 50%, #eee);
+    background-color: #fff;
+    border-top: 4px solid #222;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     padding: 24px 16px;
-    position: relative; }
+    position: relative;
+    -webkit-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out; }
     .navigation .tile:hover {
+      background-color: #FFD400;
       cursor: pointer; }
-      .navigation .tile:hover img {
+      .navigation .tile:hover .letter {
         -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
         -moz-transform: scale(1.5);
         transform: scale(1.5); }
     @media only screen and (min-width: 480px) {
       .navigation .tile {
+        border: 2px solid #222;
         justify-content: flex-start;
         width: 50vw; } }
     @media only screen and (min-width: 1024px) {
       .navigation .tile {
-        border: 2px solid #222;
         height: 300px;
         width: 300px; } }
-    .navigation .tile img {
+    .navigation .tile .letter {
       bottom: 24px;
       max-width: 160px;
       position: absolute;
@@ -238,11 +254,17 @@ p {
       font-weight: 600; }
       .navigation .tile .title span {
         color: #FFD400; }
-    .navigation .tile h6 {
+    .navigation .tile .read-more {
+      align-items: center;
       background-color: #FFD400;
       color: #222;
+      display: flex;
       padding: 4px 8px;
       text-transform: uppercase; }
+      .navigation .tile .read-more h6 {
+        padding-right: 8px; }
+      .navigation .tile .read-more img {
+        height: 12px; }
 
 .overlay {
   background-image: linear-gradient(to bottom right, #fff 50%, #eee);
@@ -445,14 +467,21 @@ p {
   padding: 1rem 0; }
   .case p {
     margin: 0; }
+  .case .see-case {
+    align-items: center;
+    background-color: #FFD400;
+    color: #222;
+    display: inline-flex;
+    padding: 4px 8px;
+    text-transform: uppercase; }
+    .case .see-case h6 {
+      padding-right: 8px; }
+    .case .see-case img {
+      height: 12px; }
 
 .job {
   padding: 0 0 24px 24px;
   position: relative; }
-  .job h5 {
-    padding: 1rem 0; }
-  .job:last-child:before {
-    display: none; }
   .job:after {
     content: "";
     background-color: #FFD400;
@@ -470,6 +499,26 @@ p {
     position: absolute;
     top: 8px;
     width: 2px; }
+  .job:last-child:before {
+    display: none; }
+  .job .sect {
+    padding-bottom: 1rem; }
+    .job .sect .sub-title {
+      color: #828282; }
+    .job .sect ul {
+      padding-left: 16px; }
+      .job .sect ul li:before {
+        background-color: #FFD400;
+        /* Change the color */
+        content: "";
+        /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        display: inline-block;
+        /* Needed to add space between the bullet and the text */
+        margin-left: -1rem;
+        /* Also needed for space (tweak if needed) */
+        height: 0.5rem;
+        width: 0.5rem;
+        margin: -0.5rem 0.5rem 0 -1rem; }
 
 *,
 *::after,

@@ -23,17 +23,27 @@
 .case {
 
     padding: 1rem 0;
-    p {margin: 0;}
+
+    p { margin: 0; }
+
+    .see-case {
+
+        align-items: center;
+        background-color: $c-primary;
+        color: $c-black;
+        display: inline-flex;
+        padding: 4px 8px;
+        text-transform: uppercase;
+
+        h6 { padding-right: 8px; }
+        img { height: 12px; }
+    }
 }
 
 .job {
 
     padding: 0 0 24px 24px;
     position: relative;
-
-    h5 { padding: 1rem 0 }
-
-    &:last-child:before { display: none; }
 
     &:after {
 
@@ -57,5 +67,30 @@
         position: absolute;
         top: 8px;
         width: 2px;
+    }
+
+    &:last-child:before { display: none; }
+
+    .sect {
+
+        padding-bottom: 1rem;
+
+        .sub-title { color: $c-grey; }
+
+        ul {
+
+            padding-left: 16px;
+
+            li:before {
+
+                background-color: $c-primary; /* Change the color */
+                content: "";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                display: inline-block; /* Needed to add space between the bullet and the text */
+                margin-left: -1rem; /* Also needed for space (tweak if needed) */
+                height: 0.5rem;
+                width: 0.5rem;
+                margin: -0.5rem 0.5rem 0 -1rem;
+            }
+        }
     }
 }

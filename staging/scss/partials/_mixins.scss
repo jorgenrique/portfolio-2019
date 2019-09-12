@@ -33,6 +33,13 @@
     transition: all $time ease-in-out;
 }
 
+@mixin transform($param:scale(1.5)) {
+    -webkit-transform: $param;
+    -ms-transform: $param;
+    -moz-transform: $param;
+    transform: $param;
+}
+
 // antialiasing mode font rendering
 
 @mixin font-smoothing {

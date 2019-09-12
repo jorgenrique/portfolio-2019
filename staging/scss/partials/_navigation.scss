@@ -1,21 +1,30 @@
 .navigation {
 
+    background-color: $c-white;
     display: flex;
     flex-direction: column;
 
-    @include MQ(L) { width: 600px; }
-    @include MQ(XL) { width: 800px; }
-
     @include MQ(S) {
 
+        border-bottom: 2px solid $c-black;
+        border-top: 2px solid $c-black;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
+    @include MQ(L) {
+
+        border: none;
+        width: 600px;
+    }
+
+    @include MQ(XL) { width: 800px; }
+
     .tile {
 
         align-items: flex-start;
-        background-image: linear-gradient(to bottom right, $c-white 50%, $c-lightgrey);
+        background-color: $c-white;
+        border-top: 4px solid $c-black;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -23,31 +32,25 @@
         padding: 24px 16px;
         position: relative;
 
+        @include transition;
+
         &:hover {
 
+            background-color: $c-primary;
             cursor: pointer;
 
-            img {
-
-                // max-width: 100%;
-                // width: 100%;
-
-                -webkit-transform: scale(1.5);
-                -ms-transform: scale(1.5);
-                -moz-transform: scale(1.5);
-                transform: scale(1.5);
-            }
+            .letter { @include transform; }
         }
 
         @include MQ(S) {
 
+            border: 2px solid $c-black;
             justify-content: flex-start;
             width: 50vw;
         }
 
         @include MQ(L) {
 
-            border: 2px solid $c-black;
             height: 300px;
             width: 300px;
         }
@@ -58,7 +61,7 @@
             width: 400px;
         }
 
-        img {
+        .letter {
 
             bottom: 24px;
             max-width: 160px;
@@ -73,12 +76,17 @@
             span { color: $c-primary; }
         }
 
-        h6 {
+        .read-more {
 
+            align-items: center;
             background-color: $c-primary;
             color: $c-black;
+            display: flex;
             padding: 4px 8px;
             text-transform: uppercase;
+
+            h6 { padding-right: 8px; }
+            img { height: 12px; }
         }
     }
 }
