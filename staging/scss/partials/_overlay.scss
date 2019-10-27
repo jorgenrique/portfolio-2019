@@ -140,7 +140,7 @@
 
         &.showcase {
 
-          padding: 80px 56px 80px 16px;
+          @include MQ(L) { padding: 80px 56px 80px 16px; }
         }
     }
 
