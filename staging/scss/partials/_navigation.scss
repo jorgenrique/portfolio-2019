@@ -90,3 +90,23 @@
         }
     }
 }
+
+.button {
+
+    align-items: center;
+    background-color: $c-primary;
+    display: flex;
+    padding: 12px 16px;
+
+    h6 {
+
+      color: $c-black;
+      text-transform: uppercase;
+    }
+
+    img {
+
+        height: 12px;
+        margin-left: 8px;
+    }
+}

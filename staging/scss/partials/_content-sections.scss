@@ -20,26 +20,6 @@
     }
 }
 
-.case {
-
-    padding: 1rem 0;
-
-    p { margin: 0; }
-
-    .see-case {
-
-        align-items: center;
-        background-color: $c-primary;
-        color: $c-black;
-        display: inline-flex;
-        padding: 4px 8px;
-        text-transform: uppercase;
-
-        h6 { padding-right: 8px; }
-        img { height: 12px; }
-    }
-}
-
 .job {
 
     padding: 0 0 24px 24px;
@@ -93,4 +73,57 @@
             }
         }
     }
+}
+
+.work {
+
+  display: flex;
+  flex-direction: column;
+
+  @include MQ(M) {
+
+    border: 1px solid $c-grey;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project {
+
+    margin-bottom: 2rem;
+
+    -webkit-box-shadow: 0px 4px 4px 0px rgba($c-black,0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba($c-black,0.25);
+    box-shadow: 0px 4px 4px 0px rgba($c-black,0.25);
+
+    @include MQ(M) {
+
+      border: 1px solid $c-grey;
+      box-shadow: none;
+      margin: 0;
+      width: 50%;
+    }
+
+    .image{
+
+      position: relative;
+
+      .title {
+
+        background-color: rgba($c-black, 0.75);
+        color: $c-primary;
+        font-weight: 600;
+        left:0;
+        padding: 6px 8px;
+        position: absolute;
+        top: 12px;
+      }
+
+      img {
+
+        display: block;
+        width: 100%;
+      }
+    }
+    .button { justify-content: flex-end; }
+  }
 }
