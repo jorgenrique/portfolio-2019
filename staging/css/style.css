@@ -68,8 +68,7 @@ p {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 100vh;
+  justify-content: flex-start;
   opacity: 0;
   position: relative;
   -webkit-transition: all 1s ease-in-out;
@@ -167,7 +166,6 @@ p {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   justify-content: flex-start;
   overflow: hidden;
   padding: 120px 16px 40px;
@@ -246,8 +244,6 @@ p {
 }
 @media only screen and (min-width: 480px) {
   .navigation {
-    border-bottom: 2px solid #222;
-    border-top: 2px solid #222;
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -285,13 +281,12 @@ p {
 }
 @media only screen and (min-width: 480px) {
   .navigation .tile {
-    border: 2px solid #222;
     justify-content: flex-start;
-    width: 50vw;
   }
 }
 @media only screen and (min-width: 1024px) {
   .navigation .tile {
+    border: 2px solid #222;
     height: 300px;
     width: 300px;
   }
@@ -707,13 +702,18 @@ p {
 html,
 body {
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   line-height: 1.2;
   margin: 0;
   min-height: 100%;
   padding: 0;
+}
+@media only screen and (min-width: 1024px) {
+  html,
+body {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 body {

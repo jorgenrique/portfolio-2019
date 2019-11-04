@@ -3,8 +3,7 @@
     background-color: $c-white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 100vh;
+    justify-content: flex-start;
     opacity: 0;
     position: relative;
 
@@ -116,7 +115,6 @@
         background-color: $c-white;
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
         justify-content: flex-start;
         overflow: hidden;
         padding: 120px 16px 40px;

@@ -6,8 +6,6 @@
 
     @include MQ(S) {
 
-        border-bottom: 2px solid $c-black;
-        border-top: 2px solid $c-black;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -42,15 +40,11 @@
             .letter { @include transform; }
         }
 
-        @include MQ(S) {
-
-            border: 2px solid $c-black;
-            justify-content: flex-start;
-            width: 50vw;
-        }
+        @include MQ(S) { justify-content: flex-start; }
 
         @include MQ(L) {
 
+            border: 2px solid $c-black;
             height: 300px;
             width: 300px;
         }
