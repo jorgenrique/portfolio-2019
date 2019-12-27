@@ -1,0 +1,228 @@
+h1 {
+  font-size: 25.62890625px;
+  line-height: 36px;
+  padding-bottom: 36px;
+}
+
+h2 {
+  font-size: 22.78125px;
+  line-height: 36px;
+  padding-bottom: 24px;
+}
+
+h3 {
+  font-size: 20.25px;
+  line-height: 24px;
+  padding-bottom: 12px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+p.quote {
+  font-style: italic;
+  padding-bottom: 12px;
+}
+
+h5 {
+  font-size: 14.2222222222px;
+  line-height: 24px;
+}
+
+a {
+  color: red;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  padding: 6px 16px 0;
+  position: fixed;
+  top: -48px;
+  width: 100vw;
+}
+.header .logo {
+  padding-top: 6px;
+}
+.header .logo img {
+  height: 36px;
+}
+
+.footer {
+  background-color: #fff;
+  bottom: 0;
+  display: flex;
+  padding: 0 8px;
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
+}
+.footer .option {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+.home .logo {
+  padding-bottom: 80px;
+}
+.home .title {
+  position: relative;
+}
+.home .title::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background-color: #222;
+  left: 50%;
+  margin-left: -40px;
+  top: -12px;
+}
+
+section {
+  padding: 36px 16px 60px;
+}
+
+.job {
+  padding: 24px 0 36px;
+  position: relative;
+}
+.job:last-child {
+  padding-bottom: 0;
+}
+.job::before {
+  content: "";
+  width: 72px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: #828282;
+  position: absolute;
+}
+
+.skills .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px 16px;
+}
+.skills .skill {
+  padding-top: 12px;
+  place-self: start;
+  position: relative;
+}
+.skills .skill::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: #828282;
+  position: absolute;
+}
+
+.testimonial {
+  margin: 36px 0 60px 16px;
+  padding: 0 16px;
+  position: relative;
+}
+.testimonial::before {
+  content: "";
+  background-color: red;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 2px;
+}
+
+.products .grid {
+  display: grid;
+  grid-gap: 24px;
+}
+.products .product {
+  position: relative;
+}
+.products .product img {
+  display: block;
+  width: 100%;
+}
+.products .product .content {
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  right: 0;
+  padding: 24px 16px;
+  position: absolute;
+  z-index: 2;
+}
+.products .product .content h4 {
+  text-align: center;
+}
+.products .product::before {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(34, 34, 34, 0.1) 0%, #222222 100%);
+  background: -webkit-gradient(top, color-stop(0%, rgba(34, 34, 34, 0.1)), color-stop(100%, #222222));
+  background: -webkit-linear-gradient(top, rgba(34, 34, 34, 0.1) 0%, #222222 100%);
+  background: -o-linear-gradient(top, rgba(34, 34, 34, 0.1) 0%, #222222 100%);
+  background: -ms-linear-gradient(top, rgba(34, 34, 34, 0.1) 0%, #222222 100%);
+  background: linear-gradient(to bottom, rgba(34, 34, 34, 0.1) 0%, #222222 100%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0.4;
+  position: absolute;
+  z-index: 1;
+}
+
+.brands p {
+  padding-bottom: 24px;
+}
+.brands .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px 16px;
+}
+.brands .logo img {
+  object-fit: cover;
+  width: 100%;
+}
+
+::selection {
+  background: #222;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #222;
+  color: #fff;
+}
+
+body {
+  color: #222;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  padding-bottom: 48px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*# sourceMappingURL=style.css.map */

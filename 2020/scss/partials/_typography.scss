@@ -1,0 +1,39 @@
+h1 {
+    font-size: ms(4);
+    line-height: 36px;
+    padding-bottom: 36px;
+}
+
+h2 {
+    font-size: ms(3);
+    line-height: 36px;
+    padding-bottom: 24px;
+}
+
+h3 {
+    font-size: ms(2);
+    line-height: 24px;
+    padding-bottom: 12px;
+}
+
+h4 {
+    font-size: ms(1);
+    line-height: 24px;
+}
+
+p {
+    font-size: ms(0);
+    line-height: 24px;
+
+    &.quote {
+        font-style: italic;
+        padding-bottom: 12px;
+    }
+}
+
+h5 {
+    font-size: ms(-1);
+    line-height: 24px;
+}
+
+a { color: red }

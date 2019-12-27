@@ -1,0 +1,18 @@
+.brands {
+
+    p { padding-bottom: 24px; }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 24px 16px;
+    }
+
+    .logo {
+
+        img {
+            object-fit: cover;
+            width: 100%
+        }
+    }
+}

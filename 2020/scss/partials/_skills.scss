@@ -1,0 +1,27 @@
+.skills {
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 24px 16px;
+    }
+
+    .skill {
+
+        padding-top: 12px;
+        place-self: start;
+        position: relative;
+
+        &::before {
+
+            content: "";
+
+            width: 36px;
+            height: 2px;
+            top: 0;
+            left: 0;
+            background-color: $c-grey;
+            position: absolute;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.products {
+
+    .grid {
+        display: grid;
+        grid-gap: 24px;
+    }
+
+    .product {
+
+        position: relative;
+
+        img {
+
+            display: block;
+            width: 100%;
+        }
+
+        .content {
+
+            bottom: 0;
+            color: $c-white;
+            left: 0;
+            right: 0;
+            padding: 24px 16px;
+            position: absolute;
+            z-index: 2;
+
+            h4 { text-align: center; }
+        }
+
+        &::before {
+
+            content: "";
+            @include linear-grad;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            opacity: 0.4;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+}

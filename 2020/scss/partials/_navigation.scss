@@ -1,0 +1,36 @@
+.header {
+
+  background-color: $c-white;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  padding: 6px 16px 0;
+  position: fixed;
+  top: -48px;
+  width: 100vw;
+
+  .logo {
+      padding-top: 6px;
+      img { height: 36px;}
+  }
+}
+
+.footer {
+
+  background-color: $c-white;
+  bottom: 0;
+  display: flex;
+  padding: 0 8px;
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
+
+  .option {
+
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 12px 8px;
+  }
+}
