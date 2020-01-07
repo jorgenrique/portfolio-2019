@@ -2,8 +2,15 @@ const navButtons = document.querySelectorAll('.nav-option')
 const header = document.querySelector('.header')
 const experience = document.querySelector('.experience')
 const skills = document.querySelector('.skills')
+const skillsGrid = document.querySelector('.skills .grid')
 const products = document.querySelector('.products')
+const productsGrid = document.querySelector('.products .grid')
 const brands = document.querySelector('.brands')
+const brandsGrid = document.querySelector('.brands .grid')
+
+const test1 = document.querySelector('.test-1')
+const test2 = document.querySelector('.test-2')
+const test3 = document.querySelector('.test-3')
 
 let scrollpos = window.scrollY
 let eflag = true
@@ -26,7 +33,7 @@ const probtn = document.querySelector(`.nav-option[data-id="products"]`)
 const brabtn = document.querySelector(`.nav-option[data-id="brands"]`)
 
 
-// EXPERIENCE Content
+// EXPERIENCE CONTENT
 
 const jobs = [
     {title: 'Senior product designer & Squad lead', company: '<a href="https://www.actimo.com/" target="_blank">Actimo</a> | Copenhagen, Denmark', time: 'August 2017 - January 2020'},
@@ -41,10 +48,77 @@ const jobs = [
 ]
 
 const jobMarkup = `
-    ${jobs.map(job => `<div class="job"><h3>${job.title}</h3><p>${job.company}</p><p>${job.time}</p></div>`).join('')}
-`
+    ${jobs.map(job => `
+        <div class="job">
+            <h3>${job.title}</h3>
+            <p>${job.company}</p>
+            <p>${job.time}</p>
+        </div>
+    `).join('')}`
 
 experience.innerHTML += jobMarkup
+
+
+// SKILLS CONTENT
+
+const skillz = [
+    'Agile methodologies',
+    'Data driven design',
+    'Data visualization',
+    'Design systems',
+    'Design thinking',
+    'Front end development',
+    'Roadmap prioritization',
+    'User research'
+]
+
+const skillsMarkup = `${skillz.map(skill => `<p class="skill">${skill}</p>`).join('')}`
+
+skillsGrid.innerHTML += skillsMarkup
+
+
+// PRODUCTS CONTENT
+
+const prods = [
+    {link: 'https://www.actimo.com/', image: 'img/actimo.jpg', alt: 'Actimo', title: 'Senior product designer & squad lead'},
+    {link: 'https://www.beethedata.com/', image: 'img/beethedata.jpg', alt: 'Bee the Data', title: 'Product lead'},
+    {link: 'https://shargo.io/', image: 'img/shargo.jpg', alt: 'Shargo', title: 'UX & front end consultant'}
+]
+
+const prodsMarkup = `
+    ${prods.map(prod => `
+        <a href="${prod.link}" target="_blank" class="product">
+            <img src="${prod.image}" alt="${prod.alt}">
+            <div class="content"><h4>${prod.title}</h4></div>
+        </a>
+    `).join('')}`
+
+productsGrid.innerHTML += prodsMarkup
+
+
+// BRANDS CONTENT
+
+const brandz = [
+    {logo: 'img/aviall.jpg', alt: 'Aviall'},
+    {logo: 'img/bobbibrown.jpg', alt: 'Bobbi Brown'},
+    {logo: 'img/effie.jpg', alt: 'Effie awards'},
+    {logo: 'img/keurig.jpg', alt: 'Keurig'},
+    {logo: 'img/lamer.jpg', alt: 'LAMER'},
+    {logo: 'img/mackweldon.jpg', alt: 'Mack Weldon'},
+    {logo: 'img/markjacobs.jpg', alt: 'Mark Jacobs'},
+    {logo: 'img/mesoestetic.jpg', alt: 'Mesoestetic'},
+    {logo: 'img/moroccan.jpg', alt: 'Moroccan Oil'},
+    {logo: 'img/pfizer.jpg', alt: 'Pfizer'},
+    {logo: 'img/sjd.jpg', alt: 'San Joan de Deu'},
+    {logo: 'img/utc.jpg', alt: 'United Technologies'}
+]
+
+const brandsMarkup = `${brandz.map(brand => `<div class="logo"><img src="${brand.logo}" alt="${brand.alt}"></div>`).join('')}`
+
+brandsGrid.innerHTML += brandsMarkup
+
+
+// Functions
 
 function offset(el) {
 
