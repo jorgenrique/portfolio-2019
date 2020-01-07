@@ -1,8 +1,17 @@
 .products {
 
     .grid {
+
         display: grid;
         grid-gap: 24px;
+
+        @include MQ(S) {
+
+            grid-template-columns: repeat(6, 1fr);
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-gap: 16px;
+        }
     }
 
     .product {
@@ -40,6 +49,22 @@
             opacity: 0.4;
             position: absolute;
             z-index: 1;
+        }
+
+        @include MQ(S) { grid-column: span 3; }
+        @include MQ(L) { grid-column: span 2; }
+    }
+
+    @include MQ(S) {
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 0;
+
+        h1,
+        .grid {
+            grid-column-start: 2;
+            grid-column-end: 6;
         }
     }
 }

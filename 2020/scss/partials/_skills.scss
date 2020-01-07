@@ -2,8 +2,10 @@
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 24px 16px;
+
+        @include MQ(L) { grid-template-columns: repeat(3, 1fr); }
     }
 
     .skill {
@@ -22,6 +24,19 @@
             left: 0;
             background-color: $c-grey;
             position: absolute;
+        }
+    }
+
+    @include MQ(S) {
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 0;
+
+        h1,
+        .grid {
+            grid-column-start: 2;
+            grid-column-end: 6;
         }
     }
 }

@@ -1,43 +1,8 @@
-// center vertically and/or horizontally an absolute positioned element
-
-@mixin center($xy:xy) {
-
-    @if $xy == xy {
-
-        left: 50%;
-        top: 50%;
-        bottom: auto;
-        right: auto;
-        @include transform(translateX(-50%) translateY(-50%));
-    }
-
-    @else if $xy == x {
-
-        left: 50%;
-        right: auto;
-        @include transform(translateX(-50%));
-    }
-
-    @else if $xy == y {
-
-        top: 50%;
-        bottom: auto;
-        @include transform(translateY(-50%));
-    }
-}
-
 @mixin transition($time:400ms) {
     -webkit-transition: all $time ease-in-out;
     -ms-transition: all $time ease-in-out;
     -moz-transition: all $time ease-in-out;
     transition: all $time ease-in-out;
-}
-
-@mixin transform($param:scale(1.5)) {
-    -webkit-transform: $param;
-    -ms-transform: $param;
-    -moz-transform: $param;
-    transform: $param;
 }
 
 // antialiasing mode font rendering
