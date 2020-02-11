@@ -40,8 +40,7 @@
         &::before {
 
             content: "";
-            @include linear-grad;
-
+            background: rgba($c-black, 0.5);
             bottom: 0;
             left: 0;
             right: 0;
@@ -52,7 +51,7 @@
         }
 
         @include MQ(S) { grid-column: span 3; }
-        @include MQ(L) { grid-column: span 2; }
+        @include MQ(XL) { grid-column: span 2; }
     }
 
     @include MQ(S) {

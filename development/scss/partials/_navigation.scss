@@ -3,10 +3,11 @@
     display: flex;
     height: 48px;
     justify-content: space-between;
+    left: 0;
     padding: 6px 8px 0 16px;
     position: fixed;
+    right: 0;
     top: -48px;
-    width: 100vw;
     z-index: 5;
 
     @include transition;
@@ -95,3 +96,5 @@
         }
     }
 }
+
+.case .header { top: 0 !important }
