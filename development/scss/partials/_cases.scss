@@ -6,13 +6,13 @@
     @include MQ(S) {
 
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-gap: 0;
 
         h1 {
 
-            grid-column-start: 2;
-            grid-column-end: 6;
+            grid-column-start: 4;
+            grid-column-end: 10;
         }
     }
 
@@ -21,8 +21,13 @@
         &.after-vid { padding-top: 0; }
 
         @include MQ(S) {
-            grid-column-start: 2;
-            grid-column-end: 6;
+            grid-column-start: 3;
+            grid-column-end: 10;
+        }
+
+        @include MQ(L) {
+            grid-column-start: 3;
+            grid-column-end: 9;
         }
     }
 
@@ -35,7 +40,6 @@
         img {
 
             display: block;
-            padding-bottom: 2.25em;
             width: 100%;
         }
     }
@@ -43,10 +47,11 @@
     .image {
 
         margin-left: -1em;
+        @include shadow;
 
         @include MQ(S) {
 
-            grid-column-start: 1;
+            grid-column-start: 2;
             grid-column-end: 6;
             margin: 0;
             width: auto;
@@ -55,11 +60,12 @@
 
     .video {
 
+        margin-bottom: 3em;
+
         @include MQ(S) {
 
             grid-column-start: 2;
-            grid-column-end: 6;
-            margin-left: -80px;
+            grid-column-end: 12;
             width: auto;
 
             iframe { height: 400px; }
@@ -68,7 +74,7 @@
 
     .block{
 
-        padding-bottom: 1.5em;
+        padding-bottom: 3em;
 
         h2 {
 
@@ -83,5 +89,11 @@
 
     }
 
-    .feature { padding-bottom: 2.25em }
+    .feature {
+
+        padding-bottom: 3em;
+
+        h4,
+        .image { margin-bottom: 0.75em; }
+    }
 }

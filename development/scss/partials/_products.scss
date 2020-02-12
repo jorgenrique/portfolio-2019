@@ -17,6 +17,7 @@
     .product {
 
         position: relative;
+        overflow: hidden;
 
         img {
 
@@ -28,26 +29,33 @@
 
             bottom: 0;
             color: $c-white;
-            left: 0;
-            right: 0;
+            right: 100%;
             padding: 24px 16px;
             position: absolute;
+            width: 100%;
             z-index: 2;
 
-            h4 { text-align: center; }
+            @include transition;
         }
 
         &::before {
 
             content: "";
-            background: rgba($c-black, 0.5);
+            background: rgba($c-black, 0.1);
             bottom: 0;
             left: 0;
             right: 0;
             top: 0;
-            opacity: 0.4;
             position: absolute;
             z-index: 1;
+
+            @include transition;
+        }
+
+        &:hover {
+
+            .content { right: 0; }
+            &::before { background: rgba($c-black, 0.75); }
         }
 
         @include MQ(S) { grid-column: span 3; }
