@@ -47,7 +47,8 @@
     .image {
 
         margin-left: -1em;
-        @include shadow;
+
+        &.shadow { @include shadow; }
 
         @include MQ(S) {
 
@@ -94,6 +95,6 @@
         padding-bottom: 3em;
 
         h4,
-        .image { margin-bottom: 0.75em; }
+        .image { margin-bottom: 1.5em; }
     }
 }

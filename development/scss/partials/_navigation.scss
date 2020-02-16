@@ -25,9 +25,9 @@
     background-color: $c-white;
     bottom: 0;
     display: flex;
-    padding: 0 8px;
+    padding: 0 0.5em 0.75em;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 5;
 
     .nav-option {
@@ -37,7 +37,7 @@
         display: flex;
         flex: 1;
         justify-content: center;
-        padding: 12px 8px;
+        padding: 0.75em 0.5em;
         position: relative;
 
         &::before {
@@ -78,7 +78,8 @@
         bottom: 25%;
         flex-direction: column;
         justify-content: space-around;
-        right: 16px;
+        padding: 0;
+        right: 0;
         top: 25%;
         width: 48px;
 
