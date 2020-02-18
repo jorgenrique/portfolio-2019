@@ -29,15 +29,29 @@
 
             bottom: 0;
             color: $c-white;
-            right: 0;
             padding: 24px 16px;
             position: absolute;
+            right: 0;
+            text-align: right;
             width: 100%;
             z-index: 2;
 
             @include transition;
 
             @include MQ(M) { right: 100%; }
+
+            .link {
+
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                img {
+                    height: 12px;
+                    margin-left: 0.5em;
+                    width: 16px;
+                }
+            }
         }
 
         &::before {

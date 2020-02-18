@@ -86,8 +86,23 @@
         h5 { padding-bottom: 0.75em }
 
         p { padding-bottom: 0.75em }
-        .quote { padding: 0 }
 
+        .quote { padding: 0 }
+    }
+
+    .back-to-hp {
+
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 0.5em;
+            transform: rotate(180deg);
+        }
+
+        p { padding: 0; }
+
+        &:hover { text-decoration: underline; }
     }
 
     .feature {
