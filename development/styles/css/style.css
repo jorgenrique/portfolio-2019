@@ -43,7 +43,7 @@ a:hover::after {
   line-height: 1;
   opacity: 0.5;
   color: #E0E0E0;
-  padding-bottom: 24px;
+  padding-bottom: 36px;
 }
 
 h4 {
@@ -177,6 +177,18 @@ h1 {
     bottom: 0;
     top: auto;
   }
+}
+.footer .nav-option::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
 }
 @media only screen and (min-width: 1280px) {
   .footer .nav-option:hover {
@@ -346,13 +358,15 @@ section {
   }
 }
 .cases .case {
-  padding: 36px 24px;
-  border: 1px solid #333;
+  padding: 36px 0;
+  border-bottom: 1px solid #E0E0E0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: 100%;
-  margin-bottom: 24px;
+}
+.cases .case:nth-child(4) {
+  border: none;
 }
 .cases .case .logo_img,
 .cases .case p {
@@ -377,6 +391,7 @@ section {
   padding-top: 12px;
   align-items: center;
   justify-content: flex-start;
+  align-self: center;
   -webkit-transition: all 400ms ease-in-out;
   -ms-transition: all 400ms ease-in-out;
   -moz-transition: all 400ms ease-in-out;
@@ -398,14 +413,19 @@ section {
 .cases .case .button .arrow svg path {
   stroke: #AB7B00;
 }
-@media only screen and (min-width: 1280px) {
-  .cases .case .button:hover .arrow {
-    padding-left: 10px;
-  }
-}
 @media only screen and (min-width: 1024px) {
   .cases .case {
-    grid-column: span 3;
+    grid-column: span 6;
+  }
+  .cases .case .case-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cases .case .case-content .button {
+    padding-top: 0;
   }
 }
 @media only screen and (min-width: 744px) {

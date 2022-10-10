@@ -16,14 +16,15 @@
             grid-gap: 16px
 
     .case
-        padding: $v-gutter*3 $h-gutter*3
-        border: 1px solid $c-black
+        padding: $v-gutter*3 0
+        border-bottom: 1px solid $c-grey__light
         display: flex
         flex-direction: column
         align-items: flex-start
         max-width: 100%
 
-        margin-bottom: $v-gutter*2
+        &:nth-child(4)
+            border: none
 
         .logo_img,
         p
@@ -48,6 +49,7 @@
             padding-top: $v-gutter
             align-items: center
             justify-content: flex-start
+            align-self: center
             @include animation
 
             p
@@ -62,16 +64,19 @@
 
                 svg path
                     stroke: $c-primary
-
-            @include MQ(L)
-
-                &:hover
-
-                    .arrow
-                        padding-left: $h-gutter*1.25
             
         @include MQ(M)
-            grid-column: span 3
+            grid-column: span 6
+
+            .case-content
+                display: flex
+                flex-direction: row
+                width: 100%
+                justify-content: space-between
+                align-items: flex-end
+
+                .button
+                    padding-top: 0
 
     @include MQ(S)
 

@@ -54,7 +54,6 @@
 
 
 .footer 
-    //background-color: $c-white
     bottom: 0
     display: flex
     padding: 0
@@ -75,13 +74,12 @@
 
         @include animation
         
-        &:nth-child(2) 
+        &:nth-child(2)
             border-left: 1px solid $c-black
             border-right: 1px solid $c-black
         
 
-        &::before 
-
+        &::before
             content: ""
             @include animation
             background-color: $c-black
@@ -96,6 +94,18 @@
 
                 bottom: 0
                 top: auto
+
+        &::after
+            content: ""
+            background-color: $c-white
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            height: 100%
+            width: 100%
+            z-index: -2
             
         &:hover
             @include MQ(L)
