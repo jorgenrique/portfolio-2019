@@ -1,0 +1,141 @@
+.header 
+    display: flex
+    height: 48px
+    justify-content: space-between
+    left: 0
+    padding: 0
+    position: fixed
+    right: 0
+    top: -48px
+    z-index: 5
+
+    @include animation
+
+    .logo 
+        padding: 12px 16px 0
+        
+        img
+            height: 36px
+    
+
+    .some 
+        display: flex
+        border-left: 1px solid $c-black
+        border-bottom: 1px solid $c-black
+
+        a 
+            width: 49px
+            height: 48px
+            display: flex
+            align-items: center
+            justify-content: center
+
+            svg
+                path
+                    @include animation
+
+            &::after
+                left: 0
+                height: 100%
+                right: 100%
+                background-color: $c-black
+
+            &:nth-child(2) 
+                border-left: 1px solid $c-black
+
+            @include MQ(L) 
+                &:hover
+                    svg
+                        path
+                            fill: $c-primary
+            
+    &.show
+        top: 0 
+
+
+.footer 
+    //background-color: $c-white
+    bottom: 0
+    display: flex
+    padding: 0
+    padding-bottom: env(safe-area-inset-bottom)
+    position: fixed
+    width: 100%
+    z-index: 5
+    border-top: 1px solid $c-black
+
+    .nav-option 
+        align-items: center
+        color: $c-black
+        display: flex
+        flex: 1
+        justify-content: center
+        padding: 0.75em 0.5em
+        position: relative
+
+        @include animation
+        
+        &:nth-child(2) 
+            border-left: 1px solid $c-black
+            border-right: 1px solid $c-black
+        
+
+        &::before 
+
+            content: ""
+            @include animation
+            background-color: $c-black
+            height: 100%
+            left: 50%
+            position: absolute
+            top: 0
+            width: 0
+            z-index: -1
+
+            @include MQ(L) 
+
+                bottom: 0
+                top: auto
+            
+        &:hover
+            @include MQ(L)
+                color: $c-primary
+                cursor: pointer
+
+                &::after
+                    content: none
+
+        &.selected 
+            color: $c-white
+
+            &::before 
+                left: 0
+                width: 100%
+            
+        
+    
+
+    @include MQ(L) 
+
+        transform: rotate(90deg)
+        transform-origin: top right
+
+        bottom: auto
+        left: auto
+        top: calc(50vh + 240px)
+        right: 0
+        justify-content: flex-end
+        padding: 0
+        width: 480px
+        border: 1px solid $c-black
+        border-top: 0
+
+        .nav-option 
+            flex: 1
+            padding: $v-gutter $h-gutter*3
+
+            &:nth-child(2)
+                //border: none
+
+            p
+                font-size: 14px

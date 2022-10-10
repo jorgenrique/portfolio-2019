@@ -1,0 +1,43 @@
+.experience 
+    
+    @include MQ(S) 
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-gap: 0
+
+        h2 
+            grid-column-start: 2
+            grid-column-end: 6
+
+.job 
+    padding: 24px 0 36px
+    position: relative
+
+    a
+        display: inline-block
+        padding-top: $v-gutter*0.5
+
+    .no-link
+        color: $c-grey
+        padding-top: $v-gutter*0.5
+
+    &:last-child
+        padding-bottom: 0
+
+        &::before
+            content: none
+
+    &::before
+
+        content: ""
+        width: 72px
+        height: 1px
+        bottom: 0
+        left: 0
+        background-color: $c-grey__light
+        position: absolute
+    
+
+    @include MQ(S) 
+        grid-column-start: 2
+        grid-column-end: 6

@@ -1,0 +1,30 @@
+.home
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    height: calc(100vh - 48px)
+    width: 100vw
+
+    .logo
+        max-width: 320px
+        width: 50%
+        padding-bottom: 36px
+
+        img
+            width: 100%
+
+    .large
+        position: relative
+
+        &::before
+            content:""
+            position: absolute
+            width: 64px
+            height: 1px
+            background-color: $c-grey__light
+            left: calc(50% - 32px)
+            top: -6px
+
+section
+    padding: 96px 24px 0

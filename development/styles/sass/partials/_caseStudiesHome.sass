@@ -1,0 +1,100 @@
+.cases 
+
+    .grid
+
+        display: flex
+        flex-direction: column
+
+        @include MQ(M)
+
+            display: grid
+            grid-gap: 24px
+
+            grid-template-columns: repeat(6, 1fr)
+            grid-column-start: 1
+            grid-column-end: 7
+            grid-gap: 16px
+
+    .case
+        padding: $v-gutter*3 $h-gutter*3
+        border: 1px solid $c-black
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        max-width: 100%
+
+        margin-bottom: $v-gutter*2
+
+        .logo_img,
+        p
+            padding-bottom: 12px
+
+        .tags
+            display: flex
+            flex-wrap: wrap
+
+            .tag
+                color: $c-grey
+                border: 1px solid $c-grey__light
+                margin-right: $h-gutter
+                margin-bottom: $v-gutter
+                padding: $v-gutter*.5 $h-gutter
+                display: flex
+                align-items: center
+
+        .button
+            color: $c-primary
+            display: flex
+            padding-top: $v-gutter
+            align-items: center
+            justify-content: flex-start
+            @include animation
+
+            p
+                padding: 0
+                display: inline-block
+
+            .arrow
+                display: inline-block
+                padding-left: $h-gutter
+                height: 24px
+                @include animation
+
+                svg path
+                    stroke: $c-primary
+
+            @include MQ(L)
+
+                &:hover
+
+                    .arrow
+                        padding-left: $h-gutter*1.25
+            
+        @include MQ(M)
+            grid-column: span 3
+
+    @include MQ(S)
+
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-gap: 0
+
+        h2
+            grid-column-start: 2
+            grid-column-end: 6
+        
+        .grid 
+            grid-column-start: 2
+            grid-column-end: 6
+    
+    @include MQ(M)
+        
+        .grid 
+            grid-column-start: 1
+            grid-column-end: 7
+    
+    @include MQ(L)
+        
+        .grid 
+            grid-column-start: 2
+            grid-column-end: 6

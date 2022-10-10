@@ -1,21 +1,18 @@
 const navButtons = document.querySelectorAll('.nav-option');
 const header = document.querySelector('.header');
 const experience = document.querySelector('.experience');
-const skills = document.querySelector('.skills');
-const products = document.querySelector('.products');
+const cases = document.querySelector('.cases');
 const brands = document.querySelector('.brands');
 
 let scrollpos = window.scrollY;
 let eflag = true;
-let sflag = false;
-let pflag = false;
+let cflag = false;
 let bflag = false;
 
 const windowHeight = window.innerHeight;
 
 const expbtn = document.querySelector('.nav-option[data-id="experience"]');
-const skibtn = document.querySelector('.nav-option[data-id="skills"]');
-const probtn = document.querySelector('.nav-option[data-id="products"]');
+const casbtn = document.querySelector('.nav-option[data-id="cases"]');
 const brabtn = document.querySelector('.nav-option[data-id="brands"]');
 
 
@@ -27,8 +24,7 @@ function offset(el) {
 
 
 const eOffset = offset(experience).top - (windowHeight - 200);
-const sOffset = offset(skills).top - (windowHeight - 200);
-const pOffset = offset(products).top - (windowHeight - 200);
+const cOffset = offset(cases).top - (windowHeight - 200);
 const bOffset = offset(brands).top - (windowHeight - 200);
 
 
@@ -41,44 +37,38 @@ function runOnScroll() {
     header.classList.remove('show');
   }
 
-  if (scrollpos >= eOffset && scrollpos <= sOffset) {
+  if (scrollpos >= eOffset && scrollpos <= cOffset) {
+    
     if (eflag) {
       navButtons.forEach((navButton) => navButton.classList.remove('selected'));
       expbtn.classList.add('selected');
     }
-
     eflag = false;
-    sflag = true;
-  } else if (scrollpos >= sOffset && scrollpos <= pOffset) {
-    if (sflag) {
+    cflag = true;
+  
+  } else if (scrollpos > cOffset && scrollpos <= bOffset) {
+    
+    if (cflag) {
       navButtons.forEach((navButton) => navButton.classList.remove('selected'));
-      skibtn.classList.add('selected');
+      casbtn.classList.add('selected');
     }
-
-    sflag = false;
-    pflag = true;
-    eflag = true;
-  } else if (scrollpos >= pOffset && scrollpos <= bOffset) {
-    if (pflag) {
-      navButtons.forEach((navButton) => navButton.classList.remove('selected'));
-      probtn.classList.add('selected');
-    }
-
-    pflag = false;
+    cflag = false;
     bflag = true;
-    sflag = true;
-  } else if (scrollpos >= bOffset) {
+    eflag = true;
+
+  } else if (scrollpos > bOffset) {
+    
     if (bflag) {
       navButtons.forEach((navButton) => navButton.classList.remove('selected'));
       brabtn.classList.add('selected');
     }
 
     bflag = false;
-    pflag = true;
+    cflag = true;
+    eflag = true;
   } else {
     navButtons.forEach((navButton) => navButton.classList.remove('selected'));
     eflag = true;
-    sflag = false;
   }
 }
 

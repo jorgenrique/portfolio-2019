@@ -1,0 +1,23 @@
+@import 'partials/tokens'
+@import 'partials/mixins'
+@import 'partials/navigation'
+@import 'partials/layout'
+@import 'partials/experience'
+@import 'partials/testimonial'
+@import 'partials/caseStudiesHome'
+@import 'partials/brands'
+
+::selection
+    background: $c-black
+    color: $c-white
+
+::-moz-selection
+    background: $c-black
+    color: $c-white
+
+body
+    color: $c-black
+    font-family: $primary-font
+    padding-bottom: 96px
+
+    @include font-smoothing

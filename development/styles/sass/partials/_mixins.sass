@@ -1,0 +1,29 @@
+@mixin animation($time:400ms) 
+    -webkit-transition: all $time ease-in-out
+    -ms-transition: all $time ease-in-out
+    -moz-transition: all $time ease-in-out
+    transition: all $time ease-in-out
+
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing 
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+
+// media queries
+
+@mixin MQ($canvas) 
+
+    @if $canvas == S 
+        @media only screen and (min-width: $S)
+            @content 
+
+    @else if $canvas == M 
+        @media only screen and (min-width: $M)
+            @content 
+
+    @else if $canvas == L
+        @media only screen and (min-width: $L)
+            @content 

@@ -1,0 +1,38 @@
+.brands,
+.contact 
+
+    p
+        padding-bottom: 24px 
+
+    .grid 
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 24px 32px
+    
+
+    .logo 
+        img 
+            object-fit: cover
+            width: 100%
+        
+    
+
+    @include MQ(S) 
+
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-gap: 0
+
+        h2,
+        p,
+        .grid 
+            grid-column-start: 2
+            grid-column-end: 6
+        
+    
+
+    @include MQ(L) 
+
+        h2,
+        .grid 
+            grid-template-columns: repeat(6, 1fr) 
